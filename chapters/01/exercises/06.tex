@@ -1,0 +1,17 @@
+\begin{exercise}
+A ring \(A\) is such that every ideal not contained in the nilradical contains a non-zero idempotent (that is, an element \(e\) such that \(e^2 = e \neq 0\)).
+Prove that the nilradical and Jacobson radical of \(A\) are equal.
+\end{exercise}
+
+\begin{solution}
+Let \(\mathfrak N\) and \(\mathfrak R\) be the nilradical and Jacobson radical of \(A\), respectively.
+Since \(\mathfrak N \subseteq \mathfrak R\) necessarily, it suffices to prove that \(\mathfrak R \subseteq \mathfrak N\).
+Suppose instead that \(\mathfrak R \not\subseteq \mathfrak N\).
+Then by assumption there exists a nonzero idempotent \(e \in \mathfrak R\).
+By Proposition 1.9, \(1-e\) is a unit in \(A\), but we also have
+\begin{equation*}
+e(1-e)=e-e^2 = 0,
+\end{equation*}
+so \(1 - e\) is a zero-divisor.
+This is a contradiction, and so \(\mathfrak R \subseteq \mathfrak N\).
+\end{solution}
