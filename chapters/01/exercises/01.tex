@@ -1,0 +1,31 @@
+\begin{exercise}
+Let \(x\) be a nilpotent element of a ring \(A\).
+Show that \(1 + x\) is a unit of \(A\).
+Deduce that the sum of a nilpotent element and a unit is a unit.
+\end{exercise}
+
+\begin{solution}
+Let \(y = -x\).
+Then \(y\) is also nilpotent, so choose a positive integer \(n\) such that \(y^n = 0\).
+We have
+\begin{align*}
+(1 - y) (1 + y + y^2 + \cdots + y^{n-1})
+= 1 - y^n
+= 1
+\end{align*}
+which shows that \(1 + x = 1 - y\) is a unit.
+
+Next, let \(x\in A\) be nilpotent and \(u\in A\) a unit.
+Then \(u^{-1} x\) is nilpotent, so \(1 + u^{-1}x\) is a unit by the first part.
+Therefore
+\begin{equation*}
+u + x = u(1 + u^{-1} x).
+\end{equation*}
+Since it is a product of units, \(u + x\) is a unit.
+\end{solution}
+
+\begin{solution}[Alternative Solution]
+Since \(x\) belongs to the Jacobson radical of \(A\) by Proposition~1.8, Proposition~1.9 implies that \(1 - x y\) is a unit for every \(y \in A\).
+In particular, \(1 + x\) is a unit (take \(y = -1\)).
+The rest follows as before.
+\end{solution}
