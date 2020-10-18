@@ -1,0 +1,23 @@
+\ProvidesPackage{atiyah-macdonald/packages/exercise}
+
+%% Make all sections unnumbered and included in TOC
+%\setcounter{secnumdepth}{0}
+
+% Exercise environment
+\theoremstyle{definition}
+\newtheorem{EXERCISE}{}
+\@addtoreset{EXERCISE}{chapter}
+\numberwithin{equation}{EXERCISE}
+\RequirePackage{framed}
+\newenvironment{exercise}
+{
+	\begin{framed}\vspace*{-10pt}
+	\begin{EXERCISE}
+    \addcontentsline{toc}{section}{\arabic{EXERCISE}}
+}
+{
+	\end{EXERCISE}\vspace*{-10pt}
+	\end{framed}
+}
+\theoremstyle{plain}
+\newtheorem{claim}{Claim}[EXERCISE]

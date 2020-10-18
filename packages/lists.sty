@@ -1,0 +1,35 @@
+\ProvidesPackage{packages/lists}
+
+\RequirePackage{enumitem}
+% define spacing constants for all lists
+\def\EnumItemSep{1pt}
+\def\EnumParSep{1pt}
+\def\EnumTopSep{0pt}
+\def\EnumParTopSep{100pt}
+\def\EnumLabelIndent{0pt}
+\def\EnumLabelWidth{4.5em}
+\def\EnumLabelSep{0.5em}
+\def\DefineNewList#1#2{
+\newenvironment{#1}%
+{
+  \begin{enumerate}%
+    [ label=#2
+    , itemsep=\EnumItemSep
+    , parsep=\EnumParSep
+    , topsep=\EnumTopSep
+    , partopsep=\EnumParTopSep
+    , labelindent=\EnumLabelIndent
+    , labelwidth=\EnumLabelWidth
+    , labelsep=\EnumLabelSep]%
+  }
+  {
+    \end{enumerate}
+  }
+}
+\DefineNewList{rlist}{(\normalfont\roman{*})}
+\DefineNewList{Rlist}{(\normalfont\Roman{*})}
+\DefineNewList{alist}{(\normalfont\alph{*})}
+\DefineNewList{aplist}{(\normalfont\alph{*}$^\prime$)}
+\DefineNewList{blist}{$\bullet$}
+\DefineNewList{nlist}{(\normalfont\arabic{*})}
+\def\forcenewline{$ $} % Intended to force a line break when an environment like theorem is immediately followed by a list

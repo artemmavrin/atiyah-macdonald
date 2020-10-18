@@ -1,0 +1,48 @@
+\ProvidesPackage{packages/main-package}
+
+% Math packages
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amsthm}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
+\RequirePackage{mathrsfs}
+
+% Math macros
+\RequirePackage{packages/math-macros}
+
+% Page Formatting
+%\RequirePackage[margin=1in]{geometry}
+\pagestyle{headings}
+\allowdisplaybreaks
+\flushbottom
+
+% Fonts
+\RequirePackage[T1]{fontenc}
+\RequirePackage{microtype}
+
+% Good practices
+\RequirePackage[all,error]{onlyamsmath} % Force amsmath display environments
+\RequirePackage[l2tabu,orthodox]{nag}   % Warn about outdated commands
+\RequirePackage{fixltx2e}               % Fixes LaTeX2e problems
+
+% Bibliography Stuff
+\RequirePackage[nottoc]{tocbibind} % include bib in TOC
+\renewcommand{\bibname}{References}
+\bibliographystyle{alpha}
+
+% Tikz
+\RequirePackage{tikz}
+\usetikzlibrary{arrows}
+
+% Hyperlinks
+\RequirePackage{hyperref}
+\hypersetup{pdfborder={0 0 0},
+            linktoc=all,
+            linktocpage=false,
+            colorlinks=true,
+            linkcolor=blue,
+            citecolor=red}
+
+% Custom lists
+\RequirePackage{packages/lists}
