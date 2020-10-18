@@ -1,0 +1,16 @@
+\begin{exercise}
+Let \(A\) be a ring \(\neq 0\).
+Show that the set of prime ideals of \(A\) has minimal elements with respect to inclusion.
+\end{exercise}
+
+\begin{solution}
+Since \(A \neq 0\), the set \(\Sigma\) of prime ideals of \(A\) is nonempty, and \(\Sigma\) is partially ordered by inclusion.
+Let \(P\) be a nonempty totally ordered subset of \(\Sigma\), and let \(\mathfrak p = \bigcap P\), which is an ideal.
+We claim that \(\mathfrak{p}\) is prime, in which case it will follow that an arbitrary totally ordered subset of \(\Sigma\) has a lower bound in \(\Sigma\), so Zorn's lemma will imply that \(\Sigma\) has a minimal element with respect to inclusion.
+
+Suppose \(x, y \notin \mathfrak p\) for some \(x,y\in A\).
+Then there exist \(\mathfrak q_1,\mathfrak q_2 \in P\) such that \(x \notin \mathfrak q_1\) and \(y \notin \mathfrak q_2\).
+Without loss of generality, assume \(\mathfrak q_1 \subseteq \mathfrak q_2\).
+Then \(y \notin \mathfrak q_1\), so \(x y \notin \mathfrak q_1\) since \(\mathfrak q_1\) is prime.
+Therefore, \(x y \notin \mathfrak p\), whence \(\mathfrak p\) is a prime ideal.
+\end{solution}
