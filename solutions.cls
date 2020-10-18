@@ -196,6 +196,9 @@
         % Each chapter directory should have a main.tex that defines the \section
         % for that chapter 
         \IfFileExists{\@chapterdir/main.tex}{
+            % Advance section counter to force correct numbering
+            \setcounter{section}{\@c}
+            \addtocounter{section}{-1}
             % Read chapter heading
             \input{\@chapterdir/main}
             % Loop over exercises in the chapter
