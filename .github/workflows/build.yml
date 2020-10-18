@@ -1,0 +1,19 @@
+name: Build PDF
+
+on: [push, pull_request]
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: solutions.tex
+      - name: Upload PDF
+        uses: actions/upload-artifact@v1
+        with:
+          name: solutions.pdf
+          path: solutions.pdf
