@@ -1,3 +1,23 @@
 \begin{exercise}
 Generalize the results of \exref{1}{2} to a polynomial ring \(A[x_1,\ldots,x_r]\) in several indeterminates.
 \end{exercise}
+
+\begin{claim}[\expartref{1}{2}{ii} Generalization]
+\label{claim:1.3.ii}
+A polynomial \(f\in A[x_1,\ldots,x_r]\) is nilpotent if and only if its coefficients are all nilpotent.
+\end{claim}
+
+\begin{proof}
+(\(\Leftarrow\))
+Same as the original proof of this direction of \expartref{1}{2}{ii}.
+
+(\(\Rightarrow\))
+We induct on \(r\), with the \(r=1\) case being handled by \expartref{1}{2}{ii}.
+Consider a nilpotent \(f \in A[x_1,\ldots,x_r]\), with \(r > 1\), and write \(f\) as a single-variable polynomial (in the indeterminate \(x_r\)) with coefficients in \(A[x_1,\ldots,x_{r-1}]\):
+\begin{equation*}
+f = f_0 + f_1 x_r + \cdots + f_n x_r^n,
+\end{equation*}
+with each \(f_i \in A[x_1,\ldots,x_{r-1}]\).
+Since \(f\) is nilpotent, Exercise \ref{ex:1.2}\ref{ex:1.2.ii} implies that each \(f_i\) is nilpotent in \(A[x_1,\ldots,x_{r-1}]\).
+By induction, we conclude that the coefficients of each \(f_i\) are nilpotent, and therefore the coefficients of \(f\) are nilpotent.
+\end{proof}
