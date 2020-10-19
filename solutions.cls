@@ -80,7 +80,6 @@
     spacebelow=\parsep,
     spaceabove=\parsep,
     mdframed={
-        leftline=true,
         backgroundcolor=gray!10,
         linecolor=black,
         innertopmargin=6pt,
