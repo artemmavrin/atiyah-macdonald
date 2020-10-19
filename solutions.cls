@@ -116,10 +116,24 @@
 \newtheorem{notation}[theorem]{Notation}
 \newtheorem{axiom}[theorem]{Axiom}
 
-% Custom lists
+% Custom lists (e.g., exercise parts lists)
 \RequirePackage{enumitem}
+
+% Redefine enumerate behavior
 \setlist[enumerate, 1]{label=(\arabic*)}
 \setlist[enumerate, 2]{label=(\alph*)}
+
+% Exercise parts list
+\newlist{parts}{enumerate}{2}
+\setlist[parts, 1]{label={\roman*)}}
+
+% Use \part instead of \item in parts environments for automatic label generation
+\newcommand\@partlabel[3]{\label{ex:#1.#2.#3}}
+\renewcommand\part{\item\@partlabel{\arabic{section}}{\arabic{exercise}}{\roman{partsi}}}
+
+% Shortcut: reference an exercise part
+\newcommand\partref[3]{\ref{ex:#1.#2.#3}}
+\newcommand\expartref[3]{\expart{#1}{#2}\ref{ex:#1.#2.#3}}
 
 % Remove indent after environments
 \newcommand*\@NoIndentAfter{%
