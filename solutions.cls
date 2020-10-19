@@ -37,7 +37,7 @@
 % Colors
 \RequirePackage{xcolor}
 \colorlet{@linkcolor}{purple}
-\colorlet{@citecolor}{green}
+\colorlet{@citecolor}{purple}
 
 % Hyperlinks
 \RequirePackage[hyperfootnotes=false]{hyperref}
