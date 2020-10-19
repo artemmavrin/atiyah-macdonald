@@ -16,7 +16,7 @@ Then \(a_n b_m = 0\), hence \(a_n g = 0\) (because \(a_n g\) annihilates \(f\) a
 Now show by induction that \(a_{n-r} g = 0\) (\(0 \leq r \leq n\)).]
 \part
 \(f\) is said to be \emph{primitive} if \((a_0,a_1,\ldots,a_n)=(1)\).
-Prove that if \(f,g\in A[x]\), then \(fg\) is primitive \(\iff\) \(f\) and \(g\) are primitive.
+Prove that if \(f,g\in A[x]\), then \(f g\) is primitive \(\iff\) \(f\) and \(g\) are primitive.
 \end{parts}
 \end{exercise}
 
@@ -88,4 +88,35 @@ Again we have \((a_{n-r-1} g) f = 0\), whence \(a_{n-r-1} g = 0\) by the minimal
 
 By induction on \(r\), we conclude that \(a_{n-r} g = 0\) for \(0 \leq r \leq n\).
 In particular, \(a_j b_m = 0\) for \(0\leq j \leq n\), so that \(b_m f = 0\).
+\end{partsolution}
+
+\begin{partsolution}{1}{2}{iv}
+Let
+\begin{equation*}
+f = a_0 + a_1 x + \cdots + a_n x^n,
+\qquad
+g = b_0 + b_1 x + \cdots + b_m x^m
+\end{equation*}
+be polynomials in \(A[x]\), and let
+\begin{equation*}
+g f = c_0 + c_1 x + \cdots + c_{m+n} x^{m+n}
+\end{equation*}
+be their product, where
+\begin{equation*}
+c_k = \sum_{\substack{i+j=k \\ 0\leq i\leq n\\0\leq j\leq m}} a_i b_j.
+\end{equation*}
+Define the ideals \(\mathfrak a = (a_0,\ldots,a_n)\), \(\mathfrak b = (b_0,\ldots,b_m)\), and \(\mathfrak c = (c_0,\ldots,c_{m+n})\) of \(A\).
+Clearly \(\mathfrak c \subseteq \mathfrak a \cap \mathfrak b\).
+
+(\(\Rightarrow\))
+Suppose \(f g\) is primitive, so that \(\mathfrak c = (1)\).
+Since \(\mathfrak c \subseteq \mathfrak a \cap \mathfrak b\), it follows that \(\mathfrak a = \mathfrak b = (1)\), so \(f\) and \(g\) are primitive.
+
+(\(\Leftarrow\))
+Suppose \(f g\) is not primitive, so that \(\mathfrak c \neq (1)\).
+Then by Corollary~1.4, there exists a maximal ideal \(\mathfrak m\) of \(A\) with \(\mathfrak c \subseteq \mathfrak m\).
+Let \(\overline f\) and \(\overline g\) be the reductions of \(f\) and \(g\) modulo \(\mathfrak m\).
+Since \((A/\mathfrak m)[x]\) is an integral domain and \(\mathfrak m\) contains the coefficients of \(f g\), it follows that \(\overline f \overline g = 0\), so either \(\overline f = 0\) or \(\overline g = 0\).
+Thus, either the coefficients of \(f\) or the coefficients of \(g\) are contained in \(\mathfrak m\), whence either \(\mathfrak a\) or \(\mathfrak b\) is not the unit ideal.
+Therefore either \(f\) is not primitive or \(g\) is not primitive.
 \end{partsolution}
