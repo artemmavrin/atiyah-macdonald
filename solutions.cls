@@ -135,6 +135,9 @@
 \newcommand\partref[3]{\ref{ex:#1.#2.#3}}
 \newcommand\expartref[3]{\expart{#1}{#2}\ref{ex:#1.#2.#3}}
 
+% Solution for a problem
+\newenvironment{partsolution}[3]{\begin{solution}[Solution, {\normalfont\partref{#1}{#2}{#3}}]}{\end{solution}}
+
 % Remove indent after environments
 \newcommand*\@NoIndentAfter{%
     \@ifnextchar\par{%
