@@ -19,3 +19,26 @@ Now show by induction that \(a_{n-r} g = 0\) (\(0 \leq r \leq n\)).]
 Prove that if \(f,g\in A[x]\), then \(fg\) is primitive \(\iff\) \(f\) and \(g\) are primitive.
 \end{parts}
 \end{exercise}
+
+\begin{partsolution}{1}{2}{i}
+(\(\Leftarrow\))
+If \(a_1,\ldots,a_n\) are nilpotent in \(A\), then they are also nilpotent in \(A[x]\).
+Since the nilradical of \(A[x]\) is an ideal, \(a_1 x + \cdots + a_n x^n\) is nilpotent.
+Moreover, if \(a_0\) is a unit, then
+\begin{equation*}
+f = a_0 + (a_1 x + \cdots + a_n x^n)
+\end{equation*}
+is a unit by Exercise \ref{ex:1.1}.
+
+(\(\Rightarrow\))
+Suppose \(f\) is a unit in \(A[x]\), and let \(g \in A[x]\) be its inverse, with constant term \(b_0\).
+The constant term of the product \(f g = 1\) is \(a_0 b_0 = 1\), so \(a_0\) is a unit in \(A\).
+
+Next, let \(\mathfrak p\) be a prime ideal of \(A\), and let \(\overline f\) and \(\overline g\) be the reductions of \(f\) and \(g\), respectively, modulo \(\mathfrak p\).
+Since \((A/\mathfrak p)[x]\) is an integral domain, the equality \(\overline f \overline g = 1\) implies
+\begin{equation*}
+\deg \overline f + \deg \overline g = 0.
+\end{equation*}
+Therefore \(\overline f\) is a constant polynomial in \((A/\mathfrak p)[x]\).
+It follows that \(a_1,\ldots,a_n \in \mathfrak p\), and since \(\mathfrak p\) was arbitrarily chosen, it follows from Proposition~1.8 that \(a_1,\ldots, a_n\) are nilpotent.
+\end{partsolution}
