@@ -53,3 +53,39 @@ Suppose \(f\) is nilpotent, and let \(\mathfrak p\) be a prime ideal of \(A\).
 The reduction of \(f\) modulo \(\mathfrak p\) is nilpotent in the integral domain \((A/\mathfrak p)[x]\), whence it is zero modulo \(\mathfrak p\).
 Therefore \(a_0,a_1,\ldots,a_n \in \mathfrak p\), and the arbitrary choice of \(\mathfrak p\) implies that \(a_0,\ldots,a_n\) are in the nilradical of \(A\) by Proposition 1.8.
 \end{partsolution}
+
+\begin{partsolution}{1}{2}{iii}
+(\(\Leftarrow\))
+If there exists a nonzero \(a \in A\) such that \(a f = 0\), then \(f\) is a zero-divisor by definition.
+
+(\(\Rightarrow\))
+(This is apparently due to McCoy---cf.~\cite[Theorem 2]{McCoyDivisorsOfZero}.)
+Suppose \(f\) is a zero-divisor, and let \(g \in A[x]\) be a nonzero polynomial of least degree \(m\) such that \(g f = 0\).
+Write
+\begin{equation*}
+g = b_0 + b_1 x + \cdots + b_m x^m.
+\end{equation*}
+The \((m+n)\)th coefficient of the product \(f g = 0\) is \(a_n b_m = 0\), so \(a_n g\) has degree less than \(m\).
+Moreover, since \(g f = 0\), we also have \((a_n g) f = 0\), so by the minimality of \(m\), it follows that \(a_n g = 0\).
+
+Next, suppose \(r\in\{0,\ldots,n-1\}\) satisfies
+\begin{equation*}
+a_n g
+= a_{n-1} g
+= \cdots
+= a_{n-r} g
+= 0.
+\end{equation*}
+Then we have
+\begin{align*}
+0
+= f g
+&= a_0 g + a_1 g x + \cdots + a_n g x^n
+\\&= a_0 g + a_1 g x + \cdots + a_{n-r-1} g x^{n-r-1}.
+\end{align*}
+The highest-degree coefficient of the final sum above is \(a_{n-r-1} b_m = 0\), so \(a_{n-r-1} g\) has degree less than \(m\).
+Again we have \((a_{n-r-1} g) f = 0\), whence \(a_{n-r-1} g = 0\) by the minimality of the degree of \(g\).
+
+By induction on \(r\), we conclude that \(a_{n-r} g = 0\) for \(0 \leq r \leq n\).
+In particular, \(a_j b_m = 0\) for \(0\leq j \leq n\), so that \(b_m f = 0\).
+\end{partsolution}
