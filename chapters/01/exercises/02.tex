@@ -1,0 +1,21 @@
+\begin{exercise}
+Let \(A\) be a ring and let \(A[x]\) be the ring of polynomials in an indeterminate \(x\), with coefficients in \(A\).
+Let \(f = a_0 + a_1 x + \cdots + a_n x^n \in A[x]\).
+Prove that
+\begin{parts}
+\part
+\(f\) is a unit in \(A[x]\) \(\iff\) \(a_0\) is a unit in \(A\) and \(a_1,\ldots,a_n\) are nilpotent.
+[If \(b_0+b_1 x + \cdots + b_m x^m\) is the inverse of \(f\), prove by induction on \(r\) that \(a_n^{r+1} b_{m-r} = 0\).
+Hence show that \(a_n\) is nilpotent, and then use Ex. 1.]
+\part
+\(f\) is a nilpotent \(\iff\) \(a_0,a_1,\ldots,a_n\) are nilpotent.
+\part
+\(f\) is a zero-divisor \(\iff\) there exists \(a \neq 0\) in \(A\) such that \(a f = 0\).
+[Choose a polynomial \(g = b_0 + b_1 x + \cdots + b_m x^m\) of least degree \(m\) such that \(f g = 0\).
+Then \(a_n b_m = 0\), hence \(a_n g = 0\) (because \(a_n g\) annihilates \(f\) and has degree \(< m\)).
+Now show by induction that \(a_{n-r} g = 0\) (\(0 \leq r \leq n\)).]
+\part
+\(f\) is said to be \emph{primitive} if \((a_0,a_1,\ldots,a_n)=(1)\).
+Prove that if \(f,g\in A[x]\), then \(fg\) is primitive \(\iff\) \(f\) and \(g\) are primitive.
+\end{parts}
+\end{exercise}
