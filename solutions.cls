@@ -105,7 +105,7 @@
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{claim}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
