@@ -49,5 +49,41 @@ By Claim~\ref{claim:1.3.ii}, the coefficients of \(f_1, \ldots, f_n\) are nilpot
 Moreover, by induction the constant term of \(f_0\) is a unit and its other coefficients are nilpotent.
 Therefore the constant term of \(f\) is a unit, and the remaining coefficients are nilpotent.
 \end{proof}
+
+Now we generalize \expartref{1}{2}{iii}.
+
+\begin{claim}
+\label{claim:1.3.iii}
+A polynomial \(f\in A[x_1, \ldots, x_r]\) is a zero-divisor if and only if there exists a nonzero \(a \in A\) such that \(a f = 0\).
+\end{claim}
+
+\begin{proof}
+(\(\Leftarrow\))
+Nothing to prove.
+
+(\(\Rightarrow\))
+We induct on \(r\), with the \(r = 1\) case being handled by \expartref{1}{2}{iii}.
+Suppose \(r > 1\) and \(f \in A[x_1, \ldots, x_r]\) is a zero-divisor.
+As before, write
+\begin{equation*}
+f = f_0 + f_1 x_r + \cdots + f_n x_r^n,
+\end{equation*}
+with each \(f_i \in A[x_1, \ldots, x_{r-1}]\).
+Since \(f\) is a zero-divisor in the polynomial ring \(A[x_1, \ldots, x_{r-1}][x_r]\), \expartref{1}{2}{iii} implies that there exists a nonzero \(g \in A[x_1, \ldots, x_{r-1}]\) such that \(g f = 0\).
+In particular, \(g f_i = 0\) for all \(i\).
+Let \(d_i\) be the highest power of \(x_{r-1}\) occurring in \(f_i\), and let
+\begin{equation*}
+d = \max\{d_0, d_1, \ldots, d_n\} + 1.
+\end{equation*}
+Then, define
+\begin{equation*}
+h
+= f_0 + f_1 x_{r-1}^d + \cdots + f_n x_{r-1}^{n d},
+\end{equation*}
+a polynomial in \(A[x_1, \ldots, x_{r-1}]\).
+Then \(g h = 0\), so by induction, there exists a non-zero \(a \in A\) such that \(a h = 0\).
+In particular, \(a\) annihilates all the coefficients of \(h\), and these, by the construction of \(h\), include the coefficients of \(f_0, f_1, \ldots, f_n\).
+Thus \(a f_i = 0\) for each \(i\), and hence \(a f = 0\).
+\end{proof}
 \let\qed\relax
 \end{solution}
