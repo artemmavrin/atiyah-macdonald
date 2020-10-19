@@ -42,3 +42,14 @@ Since \((A/\mathfrak p)[x]\) is an integral domain, the equality \(\overline f \
 Therefore \(\overline f\) is a constant polynomial in \((A/\mathfrak p)[x]\).
 It follows that \(a_1,\ldots,a_n \in \mathfrak p\), and since \(\mathfrak p\) was arbitrarily chosen, it follows from Proposition~1.8 that \(a_1,\ldots, a_n\) are nilpotent.
 \end{partsolution}
+
+\begin{partsolution}{1}{2}{ii}
+(\(\Leftarrow\))
+If \(a_0,\ldots,a_n\) are nilpotent in \(A\), then they are also nilpotent in \(A[x]\).
+Since the nilradical of \(A[x]\) is an ideal (Proposition 1.7), it follows that \(f = a_0 + a_1 x + \cdots + a_n x^n\) is nilpotent in \(A[x]\).
+
+(\(\Rightarrow\))
+Suppose \(f\) is nilpotent, and let \(\mathfrak p\) be a prime ideal of \(A\).
+The reduction of \(f\) modulo \(\mathfrak p\) is nilpotent in the integral domain \((A/\mathfrak p)[x]\), whence it is zero modulo \(\mathfrak p\).
+Therefore \(a_0,a_1,\ldots,a_n \in \mathfrak p\), and the arbitrary choice of \(\mathfrak p\) implies that \(a_0,\ldots,a_n\) are in the nilradical of \(A\) by Proposition 1.8.
+\end{partsolution}
