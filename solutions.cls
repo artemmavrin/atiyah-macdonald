@@ -162,6 +162,8 @@
 \AfterEndEnvironment{notation}{\NoIndentAfterThis}
 \AfterEndEnvironment{axiom}{\NoIndentAfterThis}
 \AfterEndEnvironment{enumerate}{\NoIndentAfterThis}
+\AfterEndEnvironment{exercise}{\NoIndentAfterThis}
+\AfterEndEnvironment{parts}{\NoIndentAfterThis}
 
 % Drawing
 \RequirePackage{tikz}
