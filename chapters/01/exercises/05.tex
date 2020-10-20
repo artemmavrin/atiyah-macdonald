@@ -16,3 +16,34 @@ The contraction of a maximal ideal \(\mathfrak m\) of \(A[[x]]\) is a maximal id
 Every prime ideal of \(A\) is the contraction of a prime ideal of \(A[[x]]\).
 \end{parts}
 \end{exercise}
+
+We will occasionally need to use the following result.
+
+\begin{claim}
+\label{claim:1.5.1}
+If \(A\) is an integral domain, then \(A[[x]]\) is an integral domain.
+\end{claim}
+
+\begin{proof}
+Suppose \(f,g\in A[[x]]\) are nonzero.
+Write
+\begin{equation*}
+f = \sum_{n=0}^\infty a_n x^n,
+\qquad
+g = \sum_{n=0}^\infty b_n x^n,
+\qquad
+f g = \sum_{n=0}^\infty c_n x^n,
+\end{equation*}
+where
+\begin{equation*}
+c_n = \sum_{i + j = n} a_i b_j.
+\end{equation*}
+Choose the least non-negative integers \(i_0\) and \(j_0\) such that \(a_{i_0} \neq 0\) and \(b_{i_0} \neq 0\).
+Thus, \(a_{i_0} b_{j_0} \neq 0\), and \(a_i = b_j = 0\) for \(i < i_0\) and \(j < j_0\).
+If \(n = i_0 + j_0\), then
+\begin{equation}
+\label{eq:claim 1.5.1}
+c_n = a_{i_0} b_{j_0} + \sum_{\substack{i + j = n \\ i \neq i_0}} a_i b_j.
+\end{equation}
+In every term of the sum in \eqref{eq:claim 1.5.1}, either \(i < i_0\) or \(j < j_0\), so the sum is zero. Thus, \(c_n = a_{i_0} b_{j_0} \neq 0\), so \(f g \neq 0\), whence \(A[[x]]\) is an integral domain.
+\end{proof}
