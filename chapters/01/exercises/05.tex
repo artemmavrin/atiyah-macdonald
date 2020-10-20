@@ -73,3 +73,36 @@ c_n
 for \(n \geq 1\).
 Therefore \(f g = 1\), so \(f\) is invertible.
 \end{partsolution}
+
+\begin{partsolution}{1}{5}{ii}
+Suppose \(f\) is nilpotent, and let \(\mathfrak p\) be a prime ideal of \(A\).
+The reduction \(\overline f\) of \(f\) modulo \(\mathfrak p\) is a nilpotent element of \((A/\mathfrak p)[[x]]\).
+Since \((A/\mathfrak p)[[x]]\) is an integral domain by Claim \ref{claim:1.5.1}, it follows that \(\overline f = 0\).
+Therefore, all the coefficients of \(f\) belong to the arbitrarily-chosen prime ideal \(\mathfrak p\), whence they are all nilpotent by Proposition 1.8.
+
+The converse is not necessarily true (at least for non-Noetherian rings---cf.~\exref{7}{2} for the Noetherian case).
+For example, consider the ring
+\begin{equation*}
+A = \mathbf{F}_2[t, t^{1/2}, t^{1/3}, \ldots]/(t)
+\end{equation*}
+and the formal power series
+\begin{equation*}
+f = \sum_{n=1}^\infty t^{1/n} x^n \in A[[x]].
+\end{equation*}
+The coefficients of \(f\) are all nilpotent.
+Working in characteristic \(2\),
+\begin{align*}
+f^{2^k}
+&= \left(t x + t^{1/2} x^2 + \cdots + t^{1/m} x^m + \sum_{n = m + 1}^\infty t^{1/n} x^n\right)^{2^k}
+\\&= t^{2^k} x^{2^k} + t^{2^k / 2} x^{2\cdot2^k} + \cdots + t^{2^k / m} x^{m 2^k} + \left(\sum_{n = m+1}^\infty t^{1/n} x^n\right)^{2^k}
+\end{align*}
+for all positive integers \(k, m\), so that
+\begin{equation*}
+f^{2^k}
+= \sum_{n=1}^\infty t^{2^k/n} x^{2^k n} \neq 0.
+\end{equation*}
+Now if \(m\) is a positive integer, choose a positive integer \(k\) such that \(2^k \geq m\), in which case \(f^{2^k} \neq 0\), so \(f^m \neq 0\).
+Thus, \(f\) is not nilpotent.
+
+(Another example of a non-nilpotent power series with nilpotent coefficients can be found in \cite[Example 2]{FieldsZeroDivisors}.)
+\end{partsolution}
