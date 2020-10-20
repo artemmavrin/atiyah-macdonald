@@ -2,3 +2,18 @@
 Let \(S\) be a multiplicatively closed subset of a ring \(A\), and let \(M\) be a finitely generated \(A\)-module.
 Prove that \(S^{-1} M = 0\) if and only if there exists \(s \in S\) such \(s M = 0\).
 \end{exercise}
+
+\begin{solution}
+(\(\Leftarrow\))
+Suppose there exists an \(s \in S\) such that \(s M = 0\).
+Take \(x \in S^{-1} M\), and write \(x = y / t\) for some \(y \in M\) and \(t \in S\).
+Then \(x = y / t = (s y) / (s t) = 0 / (s t) = 0\).
+Thus, \(S^{-1} M = 0\).
+(This direction does not use \(M\) being finitely generated.)
+
+(\(\Rightarrow\))
+Suppose \(S^{-1} M = 0\).
+Since \(M\) is finitely generated, pick generators \(x_1, \ldots, x_n \in M\).
+Since \(x_1 = \cdots = x_n = 0\) in \(S^{-1} M\), there exist \(s_1, \ldots, s_n \in S\) such that \(s_1 x_1 = \cdots = s_n x_n = 0\) in \(M\).
+Then \(s \coloneqq s_1 \cdots s_n \in S\) since \(S\) is multiplicatively closed, and \(s x_1 = \cdots = s x_n = 0\), so \(s M = 0\).
+\end{solution}
