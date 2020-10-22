@@ -235,3 +235,14 @@
         }{}%
     }%
 }
+
+% Allow starred definitions of macros
+% https://tex.stackexchange.com/a/4388/23505
+\RequirePackage{suffix}
+
+% Change \subsection behavior (no number, and put it in the TOC automatically)
+\let\@oldsubsection\subsection
+\renewcommand\subsection[1]{%
+    \@oldsubsection*{#1}%
+    \addcontentsline{toc}{subsection}{#1}%
+}
