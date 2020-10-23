@@ -1,0 +1,28 @@
+\begin{exercise}
+Let \(A\) be a ring, \(\mathfrak N\) its nilradical.
+Show that the following are equivalent:
+\begin{parts}
+\part
+\(A\) has exactly one prime ideal;
+\part
+every element of \(A\) is either a unit or nilpotent;
+\part
+\(A/\mathfrak N\) is a field.
+\end{parts}
+\end{exercise}
+
+\begin{solution}
+(\ref{ex:1.10.i} \(\Rightarrow\) \ref{ex:1.10.ii} and \ref{ex:1.10.iii})
+Suppose \(A\) has exactly one prime ideal; by Proposition~1.8, this prime ideal must be \(\mathfrak{N}\).
+Since \(\mathfrak{N}\) is contained in a maximal ideal by Corollary~1.4, and all maximal ideals are prime, it follows that \(\mathfrak{N}\) is the only maximal ideal of \(A\).
+In particular, \(A / \mathfrak{N}\) is a field, and if \(x \in A\) is not a unit, then \(x \in \mathfrak{N}\) by Corollary~1.5, so every element of \(A\) is either a unit or nilpotent.
+
+(\ref{ex:1.10.ii} \(\Rightarrow\) \ref{ex:1.10.iii})
+Suppose every element of \(A\) is either a unit or nilpotent.
+Then every nonzero element of \(A / \mathfrak{N}\) is a unit, so \(A / \mathfrak{N}\) is a field.
+
+(\ref{ex:1.10.iii} \(\Rightarrow\) \ref{ex:1.10.i})
+Suppose \(A / \mathfrak{N}\) is a field.
+Then \(\mathfrak{N}\) is a maximal ideal of \(A\).
+But \(\mathfrak{N}\) is the intersection of all prime ideals of \(A\) by Proposition~1.8, so \(\mathfrak{N}\) must be the only prime ideal of \(A\).
+\end{solution}
