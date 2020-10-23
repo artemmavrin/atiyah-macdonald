@@ -2,7 +2,7 @@
 \ProvidesClass{solutions}
 
 % Base class
-\LoadClass[12pt, letterpaper]{article}
+\LoadClass[12pt, oneside, letterpaper]{book}
 
 % Input encoding
 \RequirePackage[utf8]{inputenc}
@@ -74,8 +74,8 @@
     % postheadspace={\newline},
     postheadhook={%
         % \textcolor{gray!80}{\rule[.6ex]{\linewidth}{0.4pt}}{\\}%
-        \@exerciselabel{\arabic{section}}{\arabic{exercise}}%
-        \addcontentsline{toc}{subsection}{\arabic{exercise}}%
+        \@exerciselabel{\arabic{chapter}}{\arabic{exercise}}%
+        \addcontentsline{toc}{section}{\arabic{exercise}}%
     },
     spacebelow=\parsep,
     spaceabove=\parsep,
@@ -92,7 +92,7 @@
 \declaretheorem[%
     name={},
     style=exercisestyle,
-    % parent=section,  % Resetting of counter is done in \GenerateSolutions
+    % parent=chapter,  % Resetting of counter is done in \GenerateSolutions
     refname={Exercise,Exercises},
     Refname={Exercise,Exercises},
 ]{exercise}
@@ -133,7 +133,7 @@
 
 % Use \part instead of \item in parts environments for automatic label generation
 \newcommand\@partlabel[3]{\label{ex:#1.#2.#3}}
-\renewcommand\part{\item\@partlabel{\arabic{section}}{\arabic{exercise}}{\roman{partsi}}}
+\renewcommand\part{\item\@partlabel{\arabic{chapter}}{\arabic{exercise}}{\roman{partsi}}}
 
 % Solution for a problem
 \newenvironment{partsolution}[3]{\begin{solution}[Solution, {\normalfont\partref{#1}{#2}{#3}}]}{\end{solution}}
@@ -184,17 +184,6 @@
 % Bibliography/references
 \RequirePackage[backend=biber]{biblatex}
 
-% Use \frontmatter, \mainmatter, and \backmatter in article document classes
-\newcommand\frontmatter{%
-    \cleardoublepage
-    \pagenumbering{roman}
-}
-\newcommand\mainmatter{
-    \cleardoublepage
-    \pagenumbering{arabic}
-}
-\newcommand\backmatter{\cleardoublepage}
-
 % Generate solutions body
 \newcommand\@MAXCHAPTERS{11}
 \newcommand\@MAXEXERCISES{40}
@@ -203,18 +192,21 @@
 }
 \newcommand\@chapterdir{}
 \newcommand\@exercisefilenoext{}
+\newcommand\@chapterlabel[1]{\label{ch:#1}}
 \newcommand{\GenerateSolutions}{
     % Loop over chapters
     \foreach \@c in {1,2,...,\@MAXCHAPTERS}{%
         \renewcommand\@chapterdir{./chapters/\@twodigits{\@c}}
-        % Each chapter directory should have a main.tex that defines the \section
+        % Each chapter directory should have a main.tex that defines the \chapter
         % for that chapter 
         \IfFileExists{\@chapterdir/main.tex}{
-            % Advance section counter to force correct numbering
-            \setcounter{section}{\@c}
-            \addtocounter{section}{-1}
+            % Advance chapter counter to force correct numbering
+            \setcounter{chapter}{\@c}
+            \addtocounter{chapter}{-1}
             % Read chapter heading
             \input{\@chapterdir/main}
+            % Add chapter label
+            \@chapterlabel{\arabic{chapter}}%
             % Set exercise counter to 0
             \setcounter{exercise}{0}
             % Loop over exercises in the chapter
@@ -237,22 +229,18 @@
 % https://tex.stackexchange.com/a/4388/23505
 \RequirePackage{suffix}
 
-% Chapter headings
-\newcommand\@chapterlabel[1]{\label{ch:#1}}
-\newcommand\chapter[1]{%
-    \section{#1}%
-    \@chapterlabel{\arabic{section}}%
-}
+% Don't print the word "Chapter"
+\let\chaptername\relax
 
-% Change \subsection behavior (no number, and put it in the TOC automatically)
-\let\@oldsubsection\subsection
-\renewcommand\subsection[1]{%
-    \@oldsubsection*{#1}%
-    \addcontentsline{toc}{subsection}{\emph{#1}}%
+% Change \section behavior (no number, and put it in the TOC automatically)
+\let\@oldsection\section
+\renewcommand\section[1]{%
+    \@oldsection*{#1}%
+    \addcontentsline{toc}{section}{\emph{#1}}%
 }
 
 % Referencing shortcuts
-\newcommand\ifcurrentchapter[1]{\ifnumequal{#1}{\arabic{section}}}
+\newcommand\ifcurrentchapter[1]{\ifnumequal{#1}{\arabic{chapter}}}
 \newcommand\chref[1]{\hyperref[ch:#1]{Chapter~#1}}
 \newcommand\exref[2]{%
     \ifcurrentchapter{#1}{%
