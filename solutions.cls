@@ -103,21 +103,18 @@
 \numberwithin{figure}{exercise}
 
 % Theorem-like environments
-\theoremstyle{plain}
-\newtheorem{theorem}{Theorem}[exercise]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{claim}[theorem]{Claim}
-
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{counterexample}[theorem]{Counterexample}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{observation}[theorem]{Observation}
-\newtheorem{notation}[theorem]{Notation}
-\newtheorem{axiom}[theorem]{Axiom}
+\declaretheorem[parent=exercise, style=plain]{theorem}
+\declaretheorem[sibling=theorem, style=plain]{lemma}
+\declaretheorem[sibling=theorem, style=plain]{proposition}
+\declaretheorem[sibling=theorem, style=plain]{corollary}
+\declaretheorem[sibling=theorem, style=plain]{claim}
+\declaretheorem[sibling=theorem, style=definition]{definition}
+\declaretheorem[sibling=theorem, style=definition]{example}
+\declaretheorem[sibling=theorem, style=definition]{counterexample}
+\declaretheorem[sibling=theorem, style=definition]{remark}
+\declaretheorem[sibling=theorem, style=definition]{observation}
+\declaretheorem[sibling=theorem, style=definition]{notation}
+\declaretheorem[sibling=theorem, style=definition]{axiom}
 
 % Custom lists (e.g., exercise parts lists)
 \RequirePackage{enumitem}
