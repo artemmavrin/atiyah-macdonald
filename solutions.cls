@@ -70,10 +70,10 @@
     headfont=\bfseries,
     notebraces={(}{)},
     bodyfont=\normalfont,
-    headpunct={},
-    postheadspace={\newline},
+    headpunct={.},
+    % postheadspace={\newline},
     postheadhook={%
-        \textcolor{gray!80}{\rule[.6ex]{\linewidth}{0.4pt}}{\\}%
+        % \textcolor{gray!80}{\rule[.6ex]{\linewidth}{0.4pt}}{\\}%
         \@exerciselabel{\arabic{section}}{\arabic{exercise}}%
         \addcontentsline{toc}{subsection}{\arabic{exercise}}%
     },
@@ -89,12 +89,15 @@
         skipbelow=\parsep,
     },
 ]{exercisestyle}
-\declaretheorem[style=exercisestyle, name=Exercise, numberwithin=section]{exercise}
+\declaretheorem[%
+    name={},
+    style=exercisestyle,
+    % parent=section,  % Resetting of counter is done in \GenerateSolutions
+    refname={Exercise,Exercises},
+    Refname={Exercise,Exercises},
+]{exercise}
 \newenvironment{solution}[1][Solution]{\begin{proof}[#1]}{\end{proof}}
 \newenvironment{altsolution}[1][Alternative Solution]{\begin{proof}[#1]}{\end{proof}}
-
-% Shortcut: reference an exercise
-\newcommand\exref[2]{Exercise~\ref{ex:#1.#2}}
 
 % Equation and figure numbering
 \numberwithin{equation}{exercise}
@@ -131,10 +134,6 @@
 % Use \part instead of \item in parts environments for automatic label generation
 \newcommand\@partlabel[3]{\label{ex:#1.#2.#3}}
 \renewcommand\part{\item\@partlabel{\arabic{section}}{\arabic{exercise}}{\roman{partsi}}}
-
-% Shortcut: reference an exercise part
-\newcommand\partref[3]{\ref{ex:#1.#2.#3}}
-\newcommand\expartref[3]{\exref{#1}{#2}~\ref{ex:#1.#2.#3}}
 
 % Solution for a problem
 \newenvironment{partsolution}[3]{\begin{solution}[Solution, {\normalfont\partref{#1}{#2}{#3}}]}{\end{solution}}
@@ -216,6 +215,8 @@
             \addtocounter{section}{-1}
             % Read chapter heading
             \input{\@chapterdir/main}
+            % Set exercise counter to 0
+            \setcounter{exercise}{0}
             % Loop over exercises in the chapter
             \foreach \@e in {1,2,...,\@MAXEXERCISES}{%
                 \renewcommand\@exercisefilenoext{\@chapterdir/exercises/\@twodigits{\@e}}
@@ -236,9 +237,35 @@
 % https://tex.stackexchange.com/a/4388/23505
 \RequirePackage{suffix}
 
+% Chapter headings
+\newcommand\@chapterlabel[1]{\label{ch:#1}}
+\newcommand\chapter[1]{%
+    \section{#1}%
+    \@chapterlabel{\arabic{section}}%
+}
+
 % Change \subsection behavior (no number, and put it in the TOC automatically)
 \let\@oldsubsection\subsection
 \renewcommand\subsection[1]{%
     \@oldsubsection*{#1}%
     \addcontentsline{toc}{subsection}{\emph{#1}}%
+}
+
+% Referencing shortcuts
+\newcommand\ifcurrentchapter[1]{\ifnumequal{#1}{\arabic{section}}}
+\newcommand\chref[1]{\hyperref[ch:#1]{Chapter~#1}}
+\newcommand\exref[2]{%
+    \ifcurrentchapter{#1}{%
+        \autoref{ex:#1.#2}%
+    }{%
+        \hyperref[ex:#1.#2]{Chapter~#1, Exercise~#2}%
+    }%
+}
+\newcommand\partref[3]{\ref{ex:#1.#2.#3}}
+\newcommand\expartref[3]{%
+    \ifcurrentchapter{#1}{%
+        \hyperref[ex:#1.#2.#3]{Exercise~#2~\partref{#1}{#2}{#3}}%
+    }{%
+        \hyperref[ex:#1.#2.#3]{Chapter~#1, Exercise~#2~\partref{#1}{#2}{#3}}%
+    }%
 }
