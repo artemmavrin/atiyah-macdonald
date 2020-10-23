@@ -194,12 +194,6 @@
 }
 \newcommand\backmatter{\cleardoublepage}
 
-% Prettier arrows
-\renewcommand{\to}{\mathchoice{\longrightarrow}{\rightarrow}{\rightarrow}{\rightarrow}}
-\newcommand{\To}{\mathchoice{\Longrightarrow}{\Rightarrow}{\Rightarrow}{\Rightarrow}}
-\let\mapstoo\mapsto
-\renewcommand{\mapsto}{\mathchoice{\longmapsto}{\mapstoo}{\mapstoo}{\mapstoo}}
-
 % Generate solutions body
 \newcommand\@MAXCHAPTERS{11}
 \newcommand\@MAXEXERCISES{40}
