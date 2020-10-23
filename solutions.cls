@@ -73,11 +73,12 @@
     },
     spacebelow=\parsep,
     spaceabove=\parsep,
+    headformat={\NAME\arabic{exercise}\NOTE},
 ]{exercisestyle}
 \declaretheorem[%
     name={},
     style=exercisestyle,
-    % parent=chapter,  % Resetting of counter is done in \GenerateSolutions
+    parent=chapter,
     refname={Exercise,Exercises},
     Refname={Exercise,Exercises},
 ]{exercise}
@@ -192,16 +193,13 @@
             \input{\@chapterdir/main}
             % Add chapter label
             \@chapterlabel{\arabic{chapter}}%
-            % Set exercise counter to 0
-            \setcounter{exercise}{0}
             % Loop over exercises in the chapter
             \foreach \@e in {1,2,...,\@MAXEXERCISES}{%
                 \renewcommand\@exercisefilenoext{\@chapterdir/exercises/\@twodigits{\@e}}
                 \IfFileExists{{\@exercisefilenoext}.tex}{
                     % Advance exercise environment counter based on name from file name
-                    \count@\c@exercise%
-                    \global\c@exercise\@e%
-                    \global\advance\c@exercise\m@ne%
+                    \setcounter{exercise}{\@e}%
+                    \addtocounter{exercise}{-1}%
                     % Include exercise + solution
                     \input{\@exercisefilenoext}
                 }{}%
@@ -229,7 +227,7 @@
 \newcommand\chref[1]{\hyperref[ch:#1]{Chapter~#1}}
 \newcommand\exref[2]{%
     \ifcurrentchapter{#1}{%
-        \autoref{ex:#1.#2}%
+        \hyperref[ex:#1.#2]{Exercise~#2}%
     }{%
         \hyperref[ex:#1.#2]{Chapter~#1, Exercise~#2}%
     }%
