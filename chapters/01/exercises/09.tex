@@ -1,0 +1,15 @@
+\begin{exercise}
+Let \(\mathfrak{a}\) be an ideal \(\neq (1)\) in a ring \(A\).
+Show that \(\mathfrak{a} = r(\mathfrak{a})\) \(\iff\) \(\mathfrak{a}\) is an intersection of prime ideals.
+\end{exercise}
+
+\begin{solution}
+(\(\Rightarrow\))
+If \(\mathfrak{a} = r(\mathfrak{a})\), then \(\mathfrak{a}\) is the intersection of all prime ideal containing \(\mathfrak{a}\) by Proposition~1.14.
+
+(\(\Leftarrow\))
+Suppose \(\mathfrak{a}\) is the intersection of prime ideals \((\mathfrak{p}_i)_{i \in I}\).
+If \(a \in A\) and \(a^n \in \mathfrak{a}\) for some positive integer \(n\), then \(a^n \in \mathfrak{p}_i\) for all \(i \in I\), and so \(a \in \mathfrak{p}_i\) for all \(i \in I\).
+Consequently, \(a \in \bigcap_{i \in I} \mathfrak{p}_i = \mathfrak{a}\), so \(r(\mathfrak{a}) \subseteq \mathfrak{a}\).
+The reverse inclusion follows from Proposition~1.13, so \(\mathfrak{a} = r(\mathfrak{a})\).
+\end{solution}
