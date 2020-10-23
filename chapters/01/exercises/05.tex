@@ -174,3 +174,30 @@ A[[x]] / \mathfrak{p}[[x]] \cong (A / \mathfrak{p})[[x]].
 \end{equation*}
 Since \((A / \mathfrak{p})[[x]]\) is an integral domain by Claim~\ref{claim:1.5.1}, it follows that \(\mathfrak{p}[[x]]\) is a prime ideal of \(A[[x]]\).
 \end{partsolution}
+
+\begin{altpartsolution}{1}{5}{v}
+Here is another proof that \(\mathfrak p[[x]]\) is a prime ideal of \(A[[x]]\) when \(\mathfrak{p}\) is a prime ideal of \(A\).
+Suppose \(f, g \in A[[x]]\) such that \(f, g \notin \mathfrak p[[x]]\).
+If
+\begin{align*}
+f &= \sum_{k=0}^\infty a_k x^k, &
+g &= \sum_{k=0}^\infty b_k x^k,
+\end{align*}
+then there exist minimal non-negative integers \(m, n\) such that \(a_m \notin \mathfrak p\) and \(b_n \notin \mathfrak p\).
+Consider
+\begin{align*}
+f g &= \sum_{k=0}^\infty c_k x^k, &
+c_k &= \sum_{i + j = k} a_i b_j.
+\end{align*}
+Let \(k = m + n\).
+Then
+\begin{equation}
+\label{eq:1.5}
+c_k - a_m b_n
+= \sum_{\substack{i + j = k \\ i \neq m}} a_i b_j
+\end{equation}
+In each summand of the right-hand side of \eqref{eq:1.5}, either \(i < m\), so \(a_i \in \mathfrak p\), or \(j < n\), so \(b_j \in \mathfrak p\).
+Therefore, the right-hand side of \eqref{eq:1.5} belongs to \(\mathfrak{p}\), so \(c_k - a_m b_n \in \mathfrak{p}\).
+Since \(\mathfrak{p}\) is prime and \(a_m, b_n \notin \mathfrak{p}\), it follows that \(a_m b_n \notin\mathfrak{p}\).
+Thus, \(c_k \notin \mathfrak p\), so \(f g \notin \mathfrak{p}[[x]]\), and hence \(\mathfrak{p}[[x]]\) is a prime ideal.
+\end{altpartsolution}
