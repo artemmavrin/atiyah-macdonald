@@ -91,6 +91,7 @@
 ]{exercisestyle}
 \declaretheorem[style=exercisestyle, name=Exercise, numberwithin=section]{exercise}
 \newenvironment{solution}[1][Solution]{\begin{proof}[#1]}{\end{proof}}
+\newenvironment{altsolution}[1][Alternative Solution]{\begin{proof}[#1]}{\end{proof}}
 
 % Shortcut: reference an exercise
 \newcommand\exref[2]{Exercise~\ref{ex:#1.#2}}
@@ -137,6 +138,7 @@
 
 % Solution for a problem
 \newenvironment{partsolution}[3]{\begin{solution}[Solution, {\normalfont\partref{#1}{#2}{#3}}]}{\end{solution}}
+\newenvironment{altpartsolution}[3]{\begin{altsolution}[Alternative Solution, {\normalfont\partref{#1}{#2}{#3}}]}{\end{altsolution}}
 
 % Remove indent after environments
 \newcommand*\@NoIndentAfter{%
