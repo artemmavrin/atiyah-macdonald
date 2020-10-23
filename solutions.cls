@@ -237,8 +237,8 @@
 \newcommand\partref[3]{\ref{ex:#1.#2.#3}}
 \newcommand\expartref[3]{%
     \ifcurrentchapter{#1}{%
-        \hyperref[ex:#1.#2.#3]{Exercise~#2~\partref{#1}{#2}{#3}}%
+        \hyperref[ex:#1.#2.#3]{Exercise~#2,~\partref{#1}{#2}{#3}}%
     }{%
-        \hyperref[ex:#1.#2.#3]{Chapter~#1, Exercise~#2~\partref{#1}{#2}{#3}}%
+        \hyperref[ex:#1.#2.#3]{Chapter~#1, Exercise~#2,~\partref{#1}{#2}{#3}}%
     }%
 }
