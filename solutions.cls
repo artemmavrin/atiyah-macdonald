@@ -75,7 +75,7 @@
     postheadhook={%
         \textcolor{gray!80}{\rule[.6ex]{\linewidth}{0.4pt}}{\\}%
         \@exerciselabel{\arabic{section}}{\arabic{exercise}}%
-        \addcontentsline{toc}{subsection}{Exercise \arabic{section}.\arabic{exercise}}%
+        \addcontentsline{toc}{subsection}{\arabic{exercise}}%
     },
     spacebelow=\parsep,
     spaceabove=\parsep,
@@ -244,5 +244,5 @@
 \let\@oldsubsection\subsection
 \renewcommand\subsection[1]{%
     \@oldsubsection*{#1}%
-    \addcontentsline{toc}{subsection}{#1}%
+    \addcontentsline{toc}{subsection}{\emph{#1}}%
 }
