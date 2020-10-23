@@ -122,8 +122,8 @@
 \renewcommand\part{\item\@partlabel{\arabic{chapter}}{\arabic{exercise}}{\roman{partsi}}}
 
 % Solution for a problem
-\newenvironment{partsolution}[3]{\begin{solution}[Solution, {\normalfont\partref{#1}{#2}{#3}}]}{\end{solution}}
-\newenvironment{altpartsolution}[3]{\begin{altsolution}[Alternative Solution, {\normalfont\partref{#1}{#2}{#3}}]}{\end{altsolution}}
+\newenvironment{partsolution}[1]{\begin{solution}[Solution, {\normalfont\partref{\arabic{chapter}}{\arabic{exercise}}{#1}}]}{\end{solution}}
+\newenvironment{altpartsolution}[1]{\begin{altsolution}[Alternative Solution, {\normalfont\partref{\arabic{chapter}}{\arabic{exercise}}{#1}}]}{\end{altsolution}}
 
 % Remove indent after environments
 \newcommand*\@NoIndentAfter{%
