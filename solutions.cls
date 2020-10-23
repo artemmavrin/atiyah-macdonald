@@ -60,10 +60,6 @@
 \RequirePackage[all, error]{onlyamsmath}
 \RequirePackage[l2tabu, orthodox]{nag}
 
-% Framed environments, used by thmtools to make exercise environment
-\RequirePackage{mdframed}
-\mdfsetup{framemethod=TikZ}
-
 % Exercise and solution environments
 \newcommand\@exerciselabel[2]{\label{ex:#1.#2}}
 \declaretheoremstyle[
@@ -71,23 +67,12 @@
     notebraces={(}{)},
     bodyfont=\normalfont,
     headpunct={.},
-    % postheadspace={\newline},
     postheadhook={%
-        % \textcolor{gray!80}{\rule[.6ex]{\linewidth}{0.4pt}}{\\}%
         \@exerciselabel{\arabic{chapter}}{\arabic{exercise}}%
         \addcontentsline{toc}{section}{\arabic{exercise}}%
     },
     spacebelow=\parsep,
     spaceabove=\parsep,
-    mdframed={
-        backgroundcolor=gray!10,
-        linecolor=black,
-        innertopmargin=6pt,
-        roundcorner=2pt,
-        innerbottommargin=6pt,
-        skipabove=\parsep,
-        skipbelow=\parsep,
-    },
 ]{exercisestyle}
 \declaretheorem[%
     name={},
