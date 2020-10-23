@@ -60,6 +60,10 @@
 \RequirePackage[all, error]{onlyamsmath}
 \RequirePackage[l2tabu, orthodox]{nag}
 
+% Framed environments, used by thmtools to make exercise environment	
+\RequirePackage{mdframed}	
+\mdfsetup{framemethod=TikZ}
+
 % Exercise and solution environments
 \newcommand\@exerciselabel[2]{\label{ex:#1.#2}}
 \declaretheoremstyle[
@@ -81,6 +85,15 @@
     parent=chapter,
     refname={Exercise,Exercises},
     Refname={Exercise,Exercises},
+    mdframed={	
+        backgroundcolor=gray!10,	
+        linecolor=black,	
+        innertopmargin=6pt,	
+        roundcorner=2pt,	
+        innerbottommargin=10pt,	
+        skipabove=\parsep,	
+        skipbelow=\parsep,	
+    },
 ]{exercise}
 \newenvironment{solution}[1][Solution]{\begin{proof}[#1]}{\end{proof}}
 \newenvironment{altsolution}[1][Alternative Solution]{\begin{proof}[#1]}{\end{proof}}
