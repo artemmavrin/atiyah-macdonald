@@ -29,3 +29,23 @@ Show that the \(f_i\) generate the unit ideal and hence that there is an equatio
 where \(J\) is some \emph{finite} subset of \(I\).
 Then the \(X_{f_i}\) (\(i \in J\)) cover \(X\).]
 \end{exercise}
+
+Before proving the numbered parts of \exref{1}{17}, we prove the following.
+
+\begin{claim}
+The sets \(X_f\), for \(f \in A\), form a basis of open sets for the Zariski topology on \(X\).
+\end{claim}
+
+\begin{proof}
+It suffices to express every open subset of \(X\) as a union of sets of the form \(X_f\).
+Take an open set \(U \subseteq X\).
+Then there is some \(E \subseteq A\) such that \(U = X \setminus V(E)\).
+By \expartref{1}{15}{iii}, we have
+\begin{equation*}
+U
+= X \setminus V(E)
+= X \setminus \bigcap_{f \in E} V(f)
+= \bigcup_{f \in E} V(f).
+\qedhere
+\end{equation*}
+\end{proof}
