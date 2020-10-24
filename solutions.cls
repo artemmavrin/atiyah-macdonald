@@ -250,3 +250,14 @@
         \hyperref[ex:#1.#2.#3]{Chapter~#1, Exercise~#2,~\partref{#1}{#2}{#3}}%
     }%
 }
+
+% A more compact table of contents
+\RequirePackage{titletoc}
+\titlecontents*%
+    {section} % section name witnout backslash
+    [0em] % left margin
+    {\contentsmargin{0em}} % above-code
+    {} % numbered-entry-format
+    {} % numberless-entry-format
+    {} % filler-page-format
+    [,\space\space] % separator
