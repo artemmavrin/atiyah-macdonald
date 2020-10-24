@@ -4,5 +4,26 @@ If \(M^\prime\) and \(M^{\prime\prime}\) are finitely generated, then so is \(M\
 \end{exercise}
 
 \begin{solution}
+Let \(f : M^\prime \to M\) and \(g : M \to M^{\prime\prime}\) be the \(A\)-module morphisms in the exact sequence.
+Choose generators \(x_1, \ldots, x_m\) of \(M^\prime\) and \(z_1, \ldots, z_n\) of \(M^{\prime\prime}\).
+Since \(g\) is surjective, choose \(y_1, \ldots, y_n \in M\) such that \(z_i = g(y_i)\) for \(i \in \{1, \ldots, n\}\).
+We claim that \(M = (f(x_1), \ldots, f(x_m), y_1, \ldots, y_n)\).
 
+Take \(y \in M\).
+Choose \(b_1, \ldots, b_n \in A\) such that
+\begin{equation*}
+g(y) = b_1 z_1 + \cdots + b_n z_n = g(b_1 y_1 + \cdots + b_n y_n).
+\end{equation*}
+Then \(y - b_1 y_1 - \cdots - b_n y_n \in \Ker(g) = \Im(f)\), so there exists \(x \in M^\prime\) such that \(f(x) = y - b_1 y_1 - \cdots - b_n y_n\).
+Now choose \(a_1, \ldots, a_m \in A\) such that \(x = a_1 x_1 + \cdots + a_m x_m\).
+Thus,
+\begin{align*}
+y
+&= f(x) + b_1 y_1 + \cdots + b_n y_n \\
+&= a_1 f(x_1) + \cdots + a_m f(x_m) + b_1 y_1 + \cdots + b_n y_n,
+\end{align*}
+whence \(M = (f(x_1), \ldots, f(x_m), y_1, \ldots, y_n)\) as claimed.\footnote{%
+Did we need exactness at \(M^\prime\)?
+Where (if anywhere) is the injectivity of \(f\) used?
+}
 \end{solution}
