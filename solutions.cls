@@ -30,10 +30,6 @@
 % Programming tools
 \RequirePackage{etoolbox}
 
-% Index (load before hyperref)
-\RequirePackage{imakeidx}
-\makeindex[columns=2, intoc]
-
 % Colors
 \RequirePackage{xcolor}
 \colorlet{@linkcolor}{purple}
@@ -218,20 +214,6 @@
     }%
 }
 
-% Allow starred definitions of macros
-% https://tex.stackexchange.com/a/4388/23505
-\RequirePackage{suffix}
-
-% Don't print the word "Chapter"
-\let\chaptername\relax
-
-% Change \section behavior (no number, and put it in the TOC automatically)
-\let\@oldsection\section
-\renewcommand\section[1]{%
-    \@oldsection*{#1}%
-    \addcontentsline{toc}{section}{\emph{#1}}%
-}
-
 % Referencing shortcuts
 \newcommand\ifcurrentchapter[1]{\ifnumequal{#1}{\arabic{chapter}}}
 \newcommand\chref[1]{\hyperref[ch:#1]{Chapter~#1}}
@@ -261,3 +243,18 @@
     {} % numberless-entry-format
     {} % filler-page-format
     [,\space\space] % separator
+
+% Change appearance of chapter and section headings
+\RequirePackage{titlesec}
+\titleformat{\chapter}%
+    [display] % shape
+    {\normalfont\bfseries\Huge} % format
+    {\thechapter} % label
+    {20pt} % sep
+    {} % before-code
+\titleformat{\section}%
+    [hang] % shape
+    {\normalfont\bfseries\itshape} % format
+    {} % label
+    {0pt} % sep
+    {} % before-code
