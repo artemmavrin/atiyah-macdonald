@@ -43,6 +43,28 @@ Therefore \(\overline f\) is a constant polynomial in \((A/\mathfrak p)[x]\).
 It follows that \(a_1,\ldots,a_n \in \mathfrak p\), and since \(\mathfrak p\) was arbitrarily chosen, it follows from Proposition~1.8 that \(a_1,\ldots, a_n\) are nilpotent.
 \end{partsolution}
 
+\begin{altpartsolution}{i}
+Here is another proof of the forward direction of \partref{1}{2}{ii}; this one uses the hint in the statement of the exercise.
+Suppose \(f\) is a unit, and let \(g = b_0 + b_1 x + \cdots + b_m x^m \in A[x]\) be its inverse.
+As before, the equation \(f g = 1\) implies that \(a_0 b_0 = 1\), so \(a_0\) and \(b_0\) are units.
+Without loss of generality, assume \(n \geq 1\), or else \(f = a_0\) and we are done.
+We claim that \(a_n^{r + 1} b_{m - r} = 0\) for every \(r \in \{0, 1, \ldots, m\}\).
+
+First, the highest-order term of \(f g = 1\) is \(a_n b_m = 0\).
+Moreover, suppose \(r \in \{0, 1, \ldots, m - 1\}\) satisfies \(a_n^{s + 1} b_{m - s} = 0\) for all \(s \in \{0, 1, \ldots, r\}\).
+We claim that \(a_n^{r + 2} b_{m - r - 1} = 0\).
+For convenience, write \(b_k = 0\) for \(k > m\), and look at the coefficient of \(x^{n + m - r - 1}\) in the equation \(f g = 1\):
+\begin{equation}
+\label{eq:1.2.i coefficient equation}
+a_0 b_{n + m - r - 1} + a_1 b_{n + m - r} + \cdots + a_{n} b_{m - r - 1} = 0.
+\end{equation}
+By hypothesis, multiplying \eqref{eq:1.2.i coefficient equation} by \(a_n^{r + 1}\) yields \(a_n^{r + 2} b_{m - r - 1} = 0\).
+By induction, it follows that \(a_n^{r + 1} b_{m - r} = 0\) for every \(r \in \{0, 1, \ldots, m\}\).
+In particular, \(a_n^{m + 1} b_0 = 0\), and \(b_0\) is a unit, so \(a_n\) is nilpotent.
+Since \(f\) is a unit and \(a_n\) is nilpotent, \exref{1}{1} implies that \(a_0 + a_1 x + \cdots + a_{n - 1} x^{n - 1} = f - a_n x^n\) is a unit.
+Repeating this argument until only \(a_0\) is left, we see that \(a_1, \ldots, a_{n - 1}\) are also all nilpotent.
+\end{altpartsolution}
+
 \begin{partsolution}{ii}
 (\(\Leftarrow\))
 If \(a_0,\ldots,a_n\) are nilpotent in \(A\), then they are also nilpotent in \(A[x]\).
