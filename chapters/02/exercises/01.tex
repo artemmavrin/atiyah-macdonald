@@ -14,10 +14,45 @@ In fact, here is a more general result that implies \exref{2}{1}.
 Let \(\mathfrak{a}\) and \(\mathfrak{b}\) be ideals of a ring \(A\).
 Then
 \begin{equation*}
-(A / \mathfrak{a}) \otimes_A (A / \mathfrak{b}) \cong A / (\mathfrak{a} + \mathfrak{b}).
+(A / \mathfrak{a}) \otimes_A (A / \mathfrak{b}) \cong A / (\mathfrak{a} + \mathfrak{b})
 \end{equation*}
+as \(A\)-algebras.
 \end{claim}
 
 \begin{proof}
+Suppose \(a_1, a_2, b_1, b_2 \in A\) such that \(a_1 - a_2 \in \mathfrak{a}\) and \(b_1 - b_2 \in \mathfrak{b}\).
+Then
+\begin{equation*}
+a_1 b_1 - a_2 b_2
+= (a_1 - a_2) b_1 + a_2 (b_1 - b_2),
+\end{equation*}
+so \(a_1 b_1 - a_2 b_2 \in \mathfrak{a} + \mathfrak{b}\).
+It follows that there is a well-defined function
+\begin{align*}
+f &: (A / \mathfrak{a}) \times (A / \mathfrak{b}) \to A / (\mathfrak{a} + \mathfrak{b}), &
+f(x + \mathfrak{a}, y + \mathfrak{b}) = x y + \mathfrak{a} + \mathfrak{b}.
+\end{align*}
+Moreover, \(f\) is \(A\)-bilinear, so by the universal property of the tensor product there is a unique \(A\)-linear map \(\tilde{f} : (A / \mathfrak{a}) \otimes_A (A / \mathfrak{b}) \to A / (\mathfrak{a} + \mathfrak{b})\) such that \(\tilde{f}(a \otimes b) = f(a, b)\) for all \(a \in A / \mathfrak{a}\) and \(b \in A / \mathfrak{b}\).
+Note that not only is \(\tilde{f}\) \(A\)-linear, it is in fact an \(A\)-algebra homomorphism.
 
+Next, define the \(A\)-algebra homomorphism \(g : A \to (A / \mathfrak{a}) \otimes_A (A / \mathfrak{b})\) by
+\begin{equation*}
+g(x)
+= (x + \mathfrak{a}) \otimes (1 + \mathfrak{b})
+= (1 + \mathfrak{a}) \otimes (x + \mathfrak{b})
+\end{equation*}
+for \(x \in A\).
+Let \(h_1 : A / \Ker(g) \to (A / \mathfrak{a}) \otimes_A (A / \mathfrak{b})\) denote the \(A\)-algebra homomorphism induced by \(g\): \(h(x + \Ker(g)) = g(x)\) for all \(x \in A\).
+If \(x \in \mathfrak{a}\) and \(y \in \mathfrak{b}\), then
+\begin{equation*}
+g(x + y) = (x + \mathfrak{a}) \otimes (1 + \mathfrak{b}) + (1 + \mathfrak{a}) \otimes (b + \mathfrak{b}) = 0,
+\end{equation*}
+so \(\mathfrak{a} + \mathfrak{b} \subseteq \Ker(g)\).
+It follows that there is an \(A\)-algebra homomorphism \(h_2 : A / (\mathfrak{a} + \mathfrak{b}) \to A / \Ker(g)\) given by \(h_2(x + \mathfrak{a} + \mathfrak{b}) = x + \Ker(g)\) for all \(a \in A\).
+Now let
+\begin{equation*}
+\tilde{g} \coloneqq h_1 \circ h_2 : A / (\mathfrak{a} + \mathfrak{b}) \to (A / \mathfrak{a}) \otimes_A (A / \mathfrak{b}).
+\end{equation*}
+Then \(\tilde{g}\) is an \(A\)-algebra homomorphism, and calculation shows that it is the inverse of \(\tilde{f}\).
+The claim follows.
 \end{proof}
