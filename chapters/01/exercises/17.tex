@@ -67,7 +67,14 @@ If \(f \in A\), then \(X_f = X\) if and only if \(V(f) = \emptyset\), which is t
 \end{partsolution}
 
 \begin{partsolution}{iv}
+(\(\Leftarrow\))
+If \(r((f)) = r((g))\), then \(V(f) = V(r((f))) = V(r((g))) = V(g)\) by \expartref{1}{15}{i}, so \(X_f = X_g\).
 
+(\(\Rightarrow\))
+Suppose \(X_f \subseteq X_g\), so that \(V(g) \subseteq V(f)\).
+By Proposition~1.14, \(r((f)) = \bigcap V(f)\) and \(r((g)) = \bigcap V(g)\), so \(r((f)) \subseteq r((g))\).
+Similarly, if \(X_g \subseteq X_f\), then \(r((g)) \subseteq r((f))\).
+Thus, if \(X_f = X_g\), then \(r((f)) = r((g))\).
 \end{partsolution}
 
 \begin{partsolution}{v}
