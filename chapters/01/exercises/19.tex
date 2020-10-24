@@ -4,5 +4,22 @@ Show that \(\Spec(A)\) is irreducible if and only if the nilradical of \(A\) is 
 \end{exercise}
 
 \begin{solution}
+Let \(X = \Spec(A)\).
 
+(\(\Rightarrow\))
+Suppose \(X\) is irreducible.
+Take \(f, g \in A\) such that \(f g\) is nilpotent.
+By \expartref{1}{17}{i} and \expartref{1}{17}{ii}, \(X_f \cap X_g = X_{f g} = \emptyset\).
+Thus, since \(X\) is irreducible, either \(X_f = \emptyset\) or \(X_g = \emptyset\).
+Again by \expartref{1}{17}{ii}, either \(f\) is nilpotent or \(g\) is nilpotent.
+Therefore, the nilradical of \(A\) is a prime ideal.
+
+(\(\Leftarrow\))
+Suppose the nilradical of \(A\) is a prime ideal.
+Let \(U\) and \(V\) be non-empty open subsets of \(X\).
+Pick \(x \in U\) and \(y \in V\), and choose basic open sets \(X_f, X_g\), for some \(f, g \in A\), such that \(x \in X_f \subseteq U\) and \(y \in X_g \subseteq V\).
+Since \(X_f\) and \(X_g\) are non-empty, \expartref{1}{17}{ii} implies that \(f\) and \(g\) are not nilpotent, so, since the nilradical of \(A\) is a prime ideal, \(f g\) is also not nilpotent.
+Therefore, \(X_{f g}\) is nonempty (again by \expartref{1}{17}{ii}), so pick \(z \in X_{f g}\).
+Moreover, \(X_{f g} = X_f \cap X_g\) by \expartref{1}{17}{i}, and \(z \in X_{f g} = X_f \cap X_g \subseteq U \cap V\), so \(U \cap V\) is nonempty.
+It follows that \(X\) is irreducible.
 \end{solution}
