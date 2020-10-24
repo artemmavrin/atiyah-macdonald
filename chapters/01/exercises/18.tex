@@ -23,7 +23,17 @@ the set \(\{x\}\) is closed (we say that \(x\) is a ``closed point'') in \(\Spec
 \end{partsolution}
 
 \begin{partsolution}{iii}
+(\(\Rightarrow\))
+Suppose \(y \in \bar{\{x\}}\).
+Then \(y\) belongs to every closed subset of \(X\) to which \(x\) belongs.
+In particular, \(V(\mathfrak{p}_x)\) is closed and \(x \in V(\mathfrak{p}_x)\), so \(y \in V(\mathfrak{p}_x)\), whence \(\mathfrak{p}_x \subseteq \mathfrak{p}_y\).
 
+(\(\Leftarrow\))
+Suppose \(\mathfrak{p}_x \subseteq \mathfrak{p}_y\).
+Let \(C\) be a closed subset of \(X\) with \(x \in C\).
+Choose \(E \subseteq A\) such that \(C = V(E)\).
+Since \(x \in C\), we have \(E \subseteq \mathfrak{p}_x \subseteq \mathfrak{p}_y\), so \(y \in C\).
+Thus, \(y\) belongs to every closed subset of \(X\) to which \(x\) belongs, so \(y \in \bar{\{x\}}\).
 \end{partsolution}
 
 \begin{partsolution}{iv}
