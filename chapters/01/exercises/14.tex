@@ -5,5 +5,29 @@ Hence the set of zero-divisors in \(A\) is a union of prime ideals.
 \end{exercise}
 
 \begin{solution}
+Without loss of generality assume \(A \neq 0\), so that \(\Sigma\) is nonempty.
+Let \(C\) be a subset of \(\Sigma\) which is totally ordered by \(\subseteq\).
+If \(\mathfrak{a} = \bigcup C\), then \(\mathfrak{a}\) is an ideal of \(A\), and if \(x \in \mathfrak{a}\), then \(x \in \mathfrak{c}\) for some \(\mathfrak{c} \in C\), so \(x\) is a zero-divisor.
+Thus, \(\mathfrak{a}\) consists of zero-divisors, so \(\mathfrak{a} \in \Sigma\).
+Consequently, \(\Sigma\) has maximal elements by Zorn's Lemma.
 
+Let \(\mathfrak{p}\) be a maximal element of \(\Sigma\).
+Suppose \(x, y \in A \setminus \mathfrak{p}\).
+Then \(\mathfrak{p}\) is a proper subset of the ideal \(\mathfrak{p} + (x)\), so by the maximality of \(\mathfrak{p}\) in \(\Sigma\), there is a non-zero-divisor \(u \in \mathfrak{p} + (x)\).
+Similarly, there is a non-zero-divisor \(v \in \mathfrak{p} + (y)\).
+It follows that \(u v\) is a non-zero-divisor, and
+\begin{equation*}
+u v \in (\mathfrak{p} + (x)) (\mathfrak{p} + (y)) \subseteq \mathfrak{p} + (x y).
+\end{equation*}
+Since \(\mathfrak{p} + (x y)\) contains a non-zero-divisor, it properly contains \(\mathfrak{p}\).
+In particular, \(x y \notin \mathfrak{p}\), so \(\mathfrak{p}\) is a prime ideal.
+Thus, maximal elements of \(\Sigma\) are prime.\footnote{%
+This result is also a corollary of a general ``Prime Ideal Principle''~\cite{LamReyesPrimeIdealPrinciple} which states that certain ideals which are maximal with respect to some property are prime.
+In particular, see \cite[Corollary~3.2]{LamReyesPrimeIdealPrinciple} for the result of \exref{1}{14}.%
+}
+
+Finally, let \(x \in A\) be a zero-divisor.
+The arguments above still hold when \(\Sigma\) is replaced by the set \(\Sigma_x\) of ideals of \(A\) which contain \(x\) and in which every element is a zero-divisor.
+In fact, \(\Sigma_x\) is nonempty since \((x) \in \Sigma_x\), so \(\Sigma_x\) has maximal elements by Zorn's lemma, and every such maximal element is a prime ideal by the same proof as before.
+Thus, every zero-divisor in \(A\) belongs to a prime ideal which consists of only zero-divisors, so the set of zero-divisors in \(A\) is a union of prime ideals.
 \end{solution}
