@@ -15,8 +15,20 @@ every finitely generated ideal in \(A\) is principal.
 If \(x \in A\), then \(x + 1 = \left(x + 1\right)^2 = x^2 + 2 x + 1\), so \(2 x = 0\).
 \end{partsolution}
 
-\begin{partsolution}{ii}
+\begin{claim}
+\label{claim:boolean integral domains are F2}
+If \(A\) is a Boolean ring and an integral domain, then \(A\) is a field with two elements.
+\end{claim}
 
+\begin{proof}
+If \(x \in A\), then \(x(x - 1) = x^2 - x = 0\) since \(x^2 = x\), so either \(x = 0\) or \(x = 1\) (and not both) since \(A\) is an integral domain.
+Thus \(A\) is a field with two elements.
+\end{proof}
+
+\begin{partsolution}{ii}
+Let \(\mathfrak{p}\) be a prime ideal of \(A\).
+Then \(A / \mathfrak{p}\) is an integral ideal which is also Boolean, so \autoref{claim:boolean integral domains are F2} implies that \(A / \mathfrak{p}\) is a field with two elements.
+It follows, in particular, that \(\mathfrak{p}\) is a maximal ideal.
 \end{partsolution}
 
 \begin{partsolution}{iii}
