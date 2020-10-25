@@ -16,5 +16,19 @@ Then \(\bar K\) is an algebraic closure of \(K\).
 \end{exercise}
 
 \begin{solution}
+Suppose \(\mathfrak{a} = (1)\).
+Then there is a finite set \(F \subseteq \Sigma\) and a family \((g_f)_{f \in F}\) of elements of \(A\) such that \(1 = \sum_{f \in F} g_f f(x_f)\).
+Let \(G\) be the finite set of all \(f \in \Sigma\) such that either \(f \in F\) or \(x_f\) occurs in a non-zero term of \(g_h\) for some \(h \in F\).
+Let \(g_f = 0\) for \(f \in G \setminus F\).
+Then
+\begin{equation}
+\label{eq:1.13:polynomial equation}
+1 = \sum_{f \in G} g_f f(x_f),
+\end{equation}
+and there are only finitely many indeterminates occurring in \eqref{eq:1.13:polynomial equation}: they are among the \(x_f\), for \(f \in G\).
+
+Therefore, we may restate \eqref{eq:1.13:polynomial equation} as an equation in \(K[x_1, \ldots, x_n]\) for some positive integer \(n\): there are polynomials \(g_1, \ldots, g_n \in K[x_1, \ldots, x_n]\) and \(f_1, \ldots, f_n \in \Sigma\) such that \(1 = \sum_{i=1}^n g_i f_i(x_i)\).
+Moreover, we may choose \(n\) to be the smallest positive integer such that such an equation holds.
+It must be the case that \(n > 1\), or else \(f_1 \in \Sigma\) would be a unit in \(K[x]\), but the only units in \(K[x]\) are the nonzero elements of \(K\) by \expartref{1}{2}{i}, and \(f_1\) is non-constant since \(f_1\) is irreducible.
 
 \end{solution}
