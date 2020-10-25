@@ -24,7 +24,16 @@ It follows that \(U \cap V\) is nonempty, so \(\bar{Y}\) is irreducible.
 \end{partsolution}
 
 \begin{partsolution}{ii}
-
+Let \(Y\) be an irreducible subspace of \(X\), and let \(\Sigma\) be the set of irreducible subspaces of \(X\) which contain \(Y\).
+Let \(C\) be a subset of \(\Sigma\) which is totally ordered by \(\subseteq\), and let \(Z \ = \bigcup C\).
+In particular \(Y \subseteq Z\).
+Moreover, suppose \(U, V\) are non-empty open subsets of \(Z\).
+Choose open subsets \(U^\prime, V^\prime\) of \(X\) such that \(U = Z \cap U^\prime\) and \(V = Z \cap V^\prime\).
+Pick points \(u \in U\) and \(v \in V\).
+Then \(u, v \in W\) for some \(W \in C\), and so \(W \cap U^\prime\) and \(W \cap V^\prime\) are non-empty open subsets of the irreducible space \(W\), so their intersection is non-empty.
+Consequently, \(U \cap V\) is nonempty, so \(Z\) is irreducible.
+Thus, \(Z \in \Sigma\) is an upper bound for \(C\).
+By Zorn's lemma, it follows that \(\Sigma\) has maximal elements.
 \end{partsolution}
 
 \begin{partsolution}{iii}
