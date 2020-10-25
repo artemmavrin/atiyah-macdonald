@@ -69,7 +69,7 @@
     headpunct={.},
     postheadhook={%
         \@exerciselabel{\arabic{chapter}}{\arabic{exercise}}%
-        \addcontentsline{toc}{section}{\arabic{exercise}}%
+        \addcontentsline{toc}{subsection}{\arabic{exercise}}%
     },
     spacebelow=\parsep,
     spaceabove=\parsep,
@@ -239,10 +239,20 @@
     {section} % section name witnout backslash
     [0em] % left margin
     {\contentsmargin{0em}} % above-code
+    {\itshape} % numbered-entry-format
+    {\itshape} % numberless-entry-format
+    {} % filler-page-format
+    [,\space\space] % separator
+\titlecontents*%
+    {subsection} % section name without backslash
+    [0em] % left margin
+    {\contentsmargin{0em}} % above-code
     {} % numbered-entry-format
     {} % numberless-entry-format
     {} % filler-page-format
+    [,\space\space] % begin
     [,\space\space] % separator
+    [] % end
 
 % Change appearance of chapter and section headings
 \RequirePackage{titlesec}
