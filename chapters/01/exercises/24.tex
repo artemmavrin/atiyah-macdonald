@@ -1,0 +1,27 @@
+\begin{exercise}
+Let \(L\) be a lattice, in which the \(\sup\) and \(\inf\) of two elements \(a, b\) are denoted by \(a \vee b\) and \(a \wedge b\) respectively.
+\(L\) is a \emph{Boolean lattice} (or \emph{Boolean algebra}) if
+\begin{enumerate}[label={\roman*)}]
+\item
+\(L\) has a least element and a greatest element (denoted by \(0\), \(1\) respectively).
+\item
+Each of \(\vee\), \(\wedge\) is distributive over the other.
+\item
+Each \(a \in L\) has a unique ``complement'' \(a^\prime \in L\) such that \(a \vee a^\prime = 1\) and \(a \wedge a^\prime = 0\).
+\end{enumerate}
+(For example, the set of all subsets of a set, ordered by inclusion, is a Boolean lattice.)
+
+Let \(L\) be a Boolean lattice.
+Define addition and multiplication in \(L\) by the rules
+\begin{align*}
+a + b &= (a \wedge b^\prime) \vee (a^\prime \wedge b), &
+a b &= a \wedge b.
+\end{align*}
+Verify that in this way \(L\) becomes a Boolean ring, say \(A(L)\).
+
+Conversely, starting from a Boolean ring \(A\), define an ordering on \(A\) as follows:
+\(a \leq b\) means that \(a = a b\).
+Show that, with respect to this ordering, \(A\) is a Boolean lattice.
+[The \(\sup\) and \(\inf\) are given by \(a \vee b = a + b + a b\) and \(a \wedge b = a b\), and the complement by \(a^\prime = 1 - a\).]
+In this way we obtain a one-to-one correspondence between (isomorphism classes of) Boolean rings and (isomorphism classes of) Boolean lattices.
+\end{exercise}
