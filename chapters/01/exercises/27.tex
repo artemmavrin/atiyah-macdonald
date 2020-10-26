@@ -1,0 +1,33 @@
+\section{Affine algebraic varieties}
+
+\begin{exercise}
+Let \(k\) be an algebraically closed field and let
+\begin{equation*}
+f_\alpha(t_1, \ldots, t_n) = 0
+\end{equation*}
+be a set of polynomial equations in \(n\) variables with coefficients in \(k\).
+The set \(X\) of all points \(x = (x_l, \ldots, x_n) \in k^n\) which satisfy these equations is an \emph{affine algebraic variety}.
+
+Consider the set of all polynomials \(g \in k[t_l, \ldots, t_n]\) with the property that \(g(x) = 0\) for all \(x \in X\).
+This set is an ideal \(I(X)\) in the polynomial ring, and is called the \emph{ideal of the variety \(X\)}.
+The quotient ring
+\begin{equation*}
+P(X) = k[t_1, \ldots, t_n] / I(X)
+\end{equation*}
+is the ring of polynomial functions on \(X\), because two polynomials \(g, h\) define the same polynomial function on \(X\) if and only if \(g - h\) vanishes at every point of \(X\),
+that is, if and only if \(g - h \in I(X)\).
+
+Let \(\xi_i\) be the image of \(t_i\) in \(P(X)\).
+The \(\xi_i\) (\(1 \leq i \leq n\)) are the \emph{coordinate functions} on \(X\):
+if \(x \in X\), then \(\xi_i(x)\) is the \(i\)th coordinate of \(x\).
+\(P(X)\) is generated as a \(k\)-algebra by the coordinate functions, and is called the \emph{coordinate ring} (or affine algebra) of \(X\).
+
+As in \exref{1}{26}, for each \(x \in X\) let \(\mathfrak{m}_x\) be the ideal of all \(f \in P(X)\) such that \(f(x) = 0\);
+it is a maximal ideal of \(P(X)\).
+Hence, if \(\tilde{X} = \Max(P(X))\), we have defined a mapping \(\mu : X \to \tilde{X}\), namely \(x \mapsto \mathfrak{m}_x\).
+
+It is easy to show that \(\mu\) is injective:
+if \(x \neq y\), we must have \(x_i \neq y_i\) for for some \(i\) (\(1 \leq i \leq n\)), and hence \(\xi_i - x_i\) is in \(\mathfrak{m}_x\) but not in \(\mathfrak{m}_y\), so that \(\mathfrak{m}_x \neq \mathfrak{m}_y\).
+What is less obvious (but still true) is that \(\mu\) is \emph{surjective}.
+This is one form of Hilbert's Nullstellensatz (see \chref{7}).
+\end{exercise}
