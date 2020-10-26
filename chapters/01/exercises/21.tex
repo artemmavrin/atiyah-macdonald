@@ -35,7 +35,19 @@ Consequently, since preimages under \(\phi^*\) of basic open sets in \(X\) are o
 \end{partsolution}
 
 \begin{partsolution}{ii}
+Let \(\mathfrak{a}\) be an ideal of \(A\).
+Suppose \(\mathfrak{q} \in {\phi^*}^{-1}(V(\mathfrak{a}))\), so that \(\phi^{-1}(\mathfrak{q}) \in V(\mathfrak{a})\), or, in other words, \(\mathfrak{a} \subseteq \phi^{-1}(\mathfrak{q})\).
+It follows that
+\begin{equation*}
+\varphi(\mathfrak{a}) \subseteq \phi(\phi^{-1}(\mathfrak{q})) \subseteq \mathfrak{q}.
+\end{equation*}
+Consequently, \(\mathfrak{a}^e \subseteq \mathfrak{q}\), so \(\mathfrak{q} \in V(\mathfrak{a}^e)\).
+Thus, \({\phi^*}^{-1}(V(\mathfrak{a})) \subseteq V(\mathfrak{a}^e)\).
 
+Conversely, suppose \(\mathfrak{q} \in V(\mathfrak{a}^e)\).
+Then \(\mathfrak{a}^e \subseteq \mathfrak{q}\), so by Proposition~1.17, \(\mathfrak{a} \subseteq \varphi^{-1}(\mathfrak{a}^e) \subseteq \varphi^{-1}(\mathfrak{q})\).
+Thus, \(\varphi^{-1}(\mathfrak{q}) \in V(\mathfrak{a})\), so \(\mathfrak{q} \in {\phi^*}^{-1}(V(\mathfrak{a}))\).
+It follows that \(V(\mathfrak{a}^e) \subseteq {\phi^*}^{-1}(V(\mathfrak{a}))\), so we conclude that \({\phi^*}^{-1}(V(\mathfrak{a})) = V(\mathfrak{a}^e)\).
 \end{partsolution}
 
 \begin{partsolution}{iii}
