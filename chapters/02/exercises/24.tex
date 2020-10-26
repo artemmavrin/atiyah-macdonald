@@ -1,0 +1,22 @@
+\section{Flatness and Tor}
+
+\begin{exercise}
+If \(M\) is an \(A\)-module, the following are equivalent:
+\begin{parts}
+\part
+\(M\) is flat;
+\part
+\(\Tor_n^A(M, N) = 0\) for all \(n > 0\) and all \(A\)-modules \(N\);
+\part
+\(\Tor_1^A(M, N) = 0\) for all \(A\)-modules \(N\).
+\end{parts}
+[To show that \partref{2}{24}{i} \(\implies\) \partref{2}{24}{ii}, take a free resolution of \(N\) and tensor it with \(M\).
+Since \(M\) is flat, the resulting sequence is exact and therefore its homology groups, which are the \(\Tor_n^A(M, N)\), are zero for \(n > 0\).
+To show that \partref{2}{24}{iii} \(\implies\) \partref{2}{24}{i}, let \(0 \to N^\prime \to N \to N^{\prime\prime} \to 0\) be an exact sequence.
+Then, from the \(\Tor\) sequence,
+\begin{equation*}
+\Tor_1(M, N) \to M \otimes N^\prime \to M \otimes N \to M \otimes N^{\prime\prime} \to 0
+\end{equation*}
+is exact.
+Since \(\Tor_1(M, N^{\prime\prime}) = 0\) it follows that \(M\) is flat.]
+\end{exercise}
