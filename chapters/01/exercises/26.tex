@@ -1,0 +1,49 @@
+\begin{exercise}
+Let \(A\) be a ring.
+The subspace of \(\Spec(A)\) consisting of the \emph{maximal} ideals of \(A\), with the induced topology, is called the \emph{maximal spectrum} of \(A\) and is denoted by \(\Max(A)\).
+For arbitrary commutative rings it does not have the nice functorial properties of \(\Spec(A)\) (see \exref{1}{21}), because the inverse image of a maximal ideal under a ring homomorphism need not be maximal.
+
+Let \(X\) be a compact Hausdorff space and let \(C(X)\) denote the ring of all real-valued continuous functions on \(X\) (add and multiply functions by adding and multiplying their values).
+For each \(x\in X\), let \(\mathfrak{m}_x\) be the set of all \(f\in C(X)\) such that \(f(x)=0\).
+The ideal \(\mathfrak{m}_x\) is maximal, because it is the kernel of the (surjective) homomorphism \(C(X)\to\mathbf{R}\) which takes \(f\) to \(f(x)\).
+If \(\tilde{X}\) denotes \(\Max(C(X))\), we have therefore defined a mapping \(\mu:X\to\tilde{X}\), namely \(x\mapsto\mathfrak{m}_x\).
+
+We shall show that \(\mu\) is a homeomorphism of \(X\) onto \(\tilde{X}\).
+\begin{parts}
+\part
+Let \(\mathfrak{m}\) be any maximal ideal of \(C(X)\), and let \(V=V(\mathfrak{m})\) be the set of common zeros of the functions in \(\mathfrak{m}\): that is,
+\begin{equation*}
+V = \{x \in X : \text{\(f(x) = 0\) for all \(f \in \mathfrak{m}\)}\}.
+\end{equation*}
+Suppose that \(V\) is empty.
+Then for each \(x\in X\) there exists \(f_x\in\mathfrak{m}\) such that \(f_x(x)\neq 0\).
+Since \(f_x\) is continuous, there is an open neighborhood \(U_x\) of \(x\) in \(X\) on which \(f_x\) does not vanish.
+By compactness a finite number of the neighborhoods, say \(U_{x_1},\ldots,U_{x_n}\), cover \(X\).
+Let
+\begin{equation*}
+f = f_{x_1}^2 + \cdots + f_{x_n}^2.
+\end{equation*}
+Then \(f\) does not vanish at any point of \(X\), hence is a unit in \(C(X)\).
+But this contradicts \(f\in\mathfrak{m}\), hence \(V\) is not empty.
+
+Let \(x\) be a point of \(V\).
+Then \(\mathfrak{m} \subseteq \mathfrak{m}_x\), hence \(\mathfrak{m} = \mathfrak{m}_x\), since \(\mathfrak{m}\) is maximal.
+Hence \(\mu\) is surjective.
+\part
+By Urysohn's lemma (this is the only non-trivial fact required in the argument) the continuous functions separate the points of \(X\).
+Hence \(x\neq y \implies \mathfrak{m}_x\neq \mathfrak{m}_y\), and therefore \(\mu\) is injective.
+\part
+Let \(f \in C(X)\); let
+\begin{equation*}
+U_f = \{x \in X : f(x) \neq 0\}
+\end{equation*}
+and let
+\begin{equation*}
+\tilde{U}_f = \{\mathfrak{m} \in \tilde{X} : f \notin \mathfrak{m}\}
+\end{equation*}
+Show that \(\mu(U_f)=\tilde{U}_f\).
+The open sets \(U_f\) (resp. \(\tilde{U}_f\)) form a basis of the topology of \(X\) (resp. \(\tilde{X}\)) and therefore \(\mu\) is a homeomorphism.
+
+Thus \(X\) can be reconstructed from the ring of functions \(C(X)\).
+\end{parts}
+\end{exercise}
