@@ -27,3 +27,9 @@ Define \(\phi : A \to B\) by \(\phi(x) = (\bar{x}, x)\), where \(\bar{x}\) is th
 Show that \(\phi^*\) is bijective but not a homeomorphism.
 \end{parts}
 \end{exercise}
+
+\begin{partsolution}{i}
+If \(f \in A\), then \(\mathfrak{q} \in {\phi^*}^{-1}(X_f)\) if and only if \(\phi^*(\mathfrak{q}) = \phi^{-1}(\mathfrak{q}) \in X_f\), which is the case if and only if \(f \notin \phi^{-1}(\mathfrak{q})\), which occurs if and only if \(\phi(f) \notin \mathfrak{q}\), which happens if and only if \(\mathfrak{q} \in Y_{\phi(f)}\).
+Thus, \({\phi^*}^{-1}(X_f) = Y_{\phi(f)}\).
+Consequently, since preimages under \(\phi^*\) of basic open sets in \(X\) are open in \(Y\), it follows that \(\phi^*\) is continuous.
+\end{partsolution}
