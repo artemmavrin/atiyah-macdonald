@@ -20,3 +20,48 @@ Then, from the \(\Tor\) sequence,
 is exact.
 Since \(\Tor_1(M, N^{\prime\prime}) = 0\) it follows that \(M\) is flat.]
 \end{exercise}
+
+\begin{solution}
+Suppose \(M\) is flat, and let \(N\) be an \(A\)-module.
+Consider a free resolution \(\cdots \to F_2 \to F_1 \to F_0 \to N \to 0\).
+Tensoring this exact sequence with \(M\) yields a chain complex
+\begin{equation*}
+\cdots \to F_2 \otimes_A M \to F_1 \otimes_A M \to F_0 \otimes_A M \to 0
+\end{equation*}
+which is exact at each positive index since \(M\) if flat.
+Thus the homology groups of this chain complex, which are the \(\Tor_n^A(M, N)\), are all zero.
+Thus \partref{2}{24}{i} implies \partref{2}{24}{ii}.
+
+Moreover, \partref{2}{24}{iii} follows immediately from \partref{2}{24}{ii}.
+
+Finally, suppose \(\Tor_1^A(M, N) = 0\) for all \(A\)-modules \(N\).
+Consider a short exact sequence \(0 \to N^\prime \to N \to N^{\prime\prime} \to 0\) of \(A\)-modules.
+Then there is a canonical long exact sequence
+\begin{equation*}
+\begin{tikzcd}[row sep=small, column sep=small]
+\cdots \arrow[r] & \Tor_2^A(M, N^\prime) \arrow[r] & \Tor_2^A(M, N) \arrow[r] \arrow[d, phantom, ""{coordinate, name=Z2}] & \Tor_2^A(M, N^{\prime\prime})
+\arrow[lld,
+    rounded corners,
+    to path={ -- ([xshift=2ex]\tikztostart.east)
+    |- (Z2) [near end]\tikztonodes
+    -| ([xshift=-2ex]\tikztotarget.west)
+    -- (\tikztotarget)}]
+\\
+& \Tor_1^A(M, N^\prime) \arrow[r] & \Tor_1^A(M, N) \arrow[r] \arrow[d, phantom, ""{coordinate, name=Z1}] & \Tor_1^A(M, N^{\prime\prime})
+\arrow[lld,
+    rounded corners,
+    to path={ -- ([xshift=2ex]\tikztostart.east)
+    |- (Z1) [near end]\tikztonodes
+    -| ([xshift=-2ex]\tikztotarget.west)
+    -- (\tikztotarget)}]
+\\
+&
+M \otimes_A N^\prime \arrow[r] & M \otimes_A N \arrow[r] & M \otimes_A N^{\prime\prime} \arrow[r] & 0.
+\end{tikzcd}
+\end{equation*}
+Since \(\Tor_1^A(M, N^{\prime\prime}) = 0\), the end of this long exact sequence is the short exact sequence
+\begin{equation*}
+0 \to M \otimes_A N^\prime \to M \otimes_A N \to M \otimes_A N^{\prime\prime} \to 0.
+\end{equation*}
+Thus, \(M\) is flat, so \partref{2}{24}{iii} implies \partref{2}{24}{i}.
+\end{solution}
