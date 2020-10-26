@@ -56,6 +56,16 @@ Suppose \(\mathfrak{p} \in \phi^*(V(\mathfrak{b}))\), so that there exists some 
 Then \(\mathfrak{b} \subseteq \mathfrak{q}\), so \(\mathfrak{b}^c \subseteq \mathfrak{p}\), whence \(\mathfrak{p} \in V(\mathfrak{b}^c)\).
 Therefore, \(\phi^*(V(\mathfrak{b})) \subseteq V(\mathfrak{b}^c)\), so, since \(V(\mathfrak{b}^c)\) is closed, \(\bar{\phi^*(V(\mathfrak{b}))} \subseteq V(\mathfrak{b}^c)\).
 
+Conversely, suppose \(\mathfrak{p} \in V(\mathfrak{b}^c)\), and let \(X_f\), for some \(f \in A\), be a basic open neighborhood of \(\mathfrak{p}\).
+We claim that \(\phi^*(V(\mathfrak{b})) \cap X_f\) is nonempty, whence it will follow that \(\mathfrak{p} \in \bar{\phi^*(V(\mathfrak{b}))}\).
+
+Since \(r(\mathfrak{b}^c) = r(\mathfrak{b})^c\) by Exercise~1.18 in the text, \expartref{1}{15}{i} implies that \(V(\mathfrak{b}^c) = V(r(\mathfrak{b})^c)\).
+In particular, \(\mathfrak{p} \in V(r(\mathfrak{b})^c)\), so \(r(\mathfrak{b})^c \subseteq \mathfrak{p}\).
+Since \(\mathfrak{p} \in X_f\) (i.e., \(f \notin \mathfrak{p}\)) and \(r(\mathfrak{b})^c \subseteq \mathfrak{p}\), it follows that \(f \notin r(\mathfrak{b})^c\), so \(\phi(f) \notin r(\mathfrak{b})\).
+Consequently, by Proposition~1.14 there exists a \(\mathfrak{q} \in V(\mathfrak{b})\) such that \(\phi(f) \notin \mathfrak{q}\).
+Thus, \(f \notin \phi^*(\mathfrak{q})\), so \(\phi^*(\mathfrak{q}) \in \phi^*(V(\mathfrak{b})) \cap X_f\).
+Therefore, \(\phi^*(V(\mathfrak{b})) \cap X_f\) is nonempty, so \(\mathfrak{p} \in \bar{\phi^*(V(\mathfrak{b}))}\), and hence \(V(\mathfrak{b}^c) \subseteq \bar{\phi^*(V(\mathfrak{b}))}\).
+We conclude that \(\bar{\phi^*(V(\mathfrak{b}))} = V(\mathfrak{b}^c)\).
 \end{partsolution}
 
 \begin{partsolution}{iv}
