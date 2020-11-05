@@ -17,10 +17,20 @@ Hence \(Y\) is a finite union of basic open sets; now use \partref{1}{23}{ii} ab
 \end{parts}
 \end{exercise}
 
+\begin{claim}
+\label{claim:boolean ring prime ideals ultrafilter property}
+Let \(\mathfrak{p}\) be a prime ideal of a Boolean ring \(A\), and let \(f \in A\).
+Then exactly one of \(f \in \mathfrak{p}\) and \(1 - f \in \mathfrak{p}\) holds.
+\end{claim}
+
+\begin{proof}
+Since \(A\) is a Boolean ring, \(f(1 - f) = f - f^2 = 0\), so \(f(1 - f) \in \mathfrak{p}\).
+Thus, either \(f \in \mathfrak{p}\) or \(1 - f \in \mathfrak{p}\) (and not both, or else \(1 \in \mathfrak{p}\)).
+\end{proof}
+
 \begin{partsolution}{i}
 Suppose \(f \in A\).
-Then \(f(1 - f) = f - f^2 = 0\) since \(A\) is a Boolean ring, so if \(\mathfrak{p}\) is a prime ideal of \(A\), then \(f(1 - f) \in \mathfrak{p}\), so either \(f \in \mathfrak{p}\) or \(1 - f \in \mathfrak{p}\) (and not both, otherwise \(1 \in \mathfrak{p}\)).
-Consequently, \(f \notin \mathfrak{p}\) if and only if \(1 - f \in \mathfrak{p}\).
+If \(\mathfrak{p}\) is a prime ideal of \(A\), then \(f \notin \mathfrak{p}\) if and only if \(1 - f \in \mathfrak{p}\) by \autoref{claim:boolean ring prime ideals ultrafilter property}.
 Thus, \(X_f = V(1 - f)\), so \(X_f\) is both open and closed.
 \end{partsolution}
 
@@ -45,5 +55,10 @@ Therefore, the sets \(X_f\), for \(f \in A\), are the only subsets of \(X\) whic
 \end{partsolution}
 
 \begin{partsolution}{iv}
-
+Since \(X\) is quasi-compact by \expartref{1}{17}{v}, it suffices to prove that \(X\) is Hausdorff.
+Take \(\mathfrak{p}, \mathfrak{q} \in X\) such that \(\mathfrak{p} \neq \mathfrak{q}\).
+Without loss of generality, there exists \(f \in \mathfrak{p}\) such that \(f \notin \mathfrak{q}\).
+Consequently, \(1 - f \notin \mathfrak{p}\) and \(1 - f \in \mathfrak{q}\) by \autoref{claim:boolean ring prime ideals ultrafilter property}.
+Then \(X_{1-f}\) and \(X_f\) are open neighborhoods of \(\mathfrak{p}\) and \(\mathfrak{q}\), respectively, and \(X_f \cap X_{1 - f} = \emptyset\) by \autoref{claim:boolean ring prime ideals ultrafilter property}.
+Thus, \(X\) is Hausdorff.
 \end{partsolution}
