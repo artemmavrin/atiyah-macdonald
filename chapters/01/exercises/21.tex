@@ -69,7 +69,38 @@ We conclude that \(\bar{\phi^*(V(\mathfrak{b}))} = V(\mathfrak{b}^c)\).
 \end{partsolution}
 
 \begin{partsolution}{iv}
+First, if \(\mathfrak{q} \in Y\), then \(\phi^*(\mathfrak{q}) \in V(\Ker(\phi))\) since \(\phi(x) = 0 \in \phi^*(\mathfrak{q})\) for all \(x \in \Ker(\phi)\).
+Thus, \(\phi^*(Y) \subseteq V(\Ker(\phi))\).
 
+Now suppose \(\phi\) is surjective.
+Also, suppose \(\mathfrak{a}\) is an ideal of \(A\).
+Then \(\phi(\mathfrak{a})\) is a subgroup of \(B\) (regardless of surjectivity).
+Moreover, if \(y \in \phi(\mathfrak{a})\) and \(b \in B\), then choose \(x \in \mathfrak{a}\) and (since \(\phi\) is surjective) \(a \in A\) such that \(\phi(x) = y\) and \(\phi(a) = b\).
+Then \(a x \in \mathfrak{a}\), so \(b y = \phi(a x) \in \phi(\mathfrak{a})\), and hence \(\phi(\mathfrak{a})\) is an ideal of \(B\).
+
+Suppose \(\mathfrak{p} \in V(\Ker(\phi))\).
+Then \(\phi(\mathfrak{p})\) is an ideal of \(B\) by the previous paragraph.
+Moreover, \(1 \notin \phi(\mathfrak{p})\) (otherwise, choose \(x \in \mathfrak{p}\) such that \(\phi(x) = 1 = \phi(1)\), in which case \(x - 1 \in \Ker(\phi) \subseteq \mathfrak{p}\), which is impossible), so \(\phi(\mathfrak{p})\) is a proper ideal of \(B\).
+Finally, suppose \(x y \in \phi(\mathfrak{p})\) for some \(x, y \in B\).
+Choose \(z \in \mathfrak{p}\) such that \(\phi(z) = x y\) and, by surjectivity, \(x^\prime, y^\prime \in A\) such that \(x = \phi(x^\prime)\) and \(y = \phi(y^\prime)\).
+Then \(z - x^\prime y^\prime \in \Ker(\phi) \subseteq \mathfrak{p}\), so \(x^\prime y^\prime \in \mathfrak{p}\), whence \(x^\prime \in \mathfrak{p}\) or \(y^\prime \in \mathfrak{p}\), and hence \(x = \phi(x^\prime) \in \phi(\mathfrak{p})\) or \(y = \phi(y^\prime) \in \phi(\mathfrak{p})\).
+Thus, \(\phi(\mathfrak{p})\) is a prime ideal of \(B\) whenever \(\mathfrak{p} \in V(\Ker(\phi))\).
+
+Next, it's necessarily the case that \(\mathfrak{p} \subseteq \phi^*(\phi(\mathfrak{p}))\).
+Conversely, suppose \(x \in \phi^*(\phi(\mathfrak{p}))\), so that \(\phi(x) \in \phi(\mathfrak{p})\).
+Choose \(y \in \mathfrak{p}\) such that \(\phi(y) = \phi(x)\), so that \(x - y \in \Ker(\phi) \subseteq \mathfrak{p}\), and hence \(x \in \mathfrak{p}\).
+Thus, \(\phi^*(\phi(\mathfrak{p})) = \mathfrak{p}\).
+
+Summarizing the results so far, \(\phi^*\) is a continuous (by \partref{1}{21}{i}) surjection of \(Y\) onto \(V(\Ker(\phi))\).
+Next, suppose \(\mathfrak{q}, \mathfrak{q}^\prime \in Y\) such that \(\phi^*(\mathfrak{q}) = \phi^*(\mathfrak{q}^\prime)\).
+Suppose \(y \in \mathfrak{q}\), so that, since \(\phi\) is surjecitve, there exists \(x \in \phi^*(\mathfrak{q}) = \phi^*(\mathfrak{q}^\prime)\) such that \(\phi(x) = y\), and hence \(y \in \mathfrak{q}^\prime\).
+Thus, \(\mathfrak{q} \subseteq \mathfrak{q}^\prime\), so \(\mathfrak{q} = \mathfrak{q}^\prime\) by symmetry, and hence \(\phi^*\) is injective.
+
+Lastly, to conclude that \(\phi^*\) is a homeomorphism of \(Y\) onto \(V(\Ker(\phi))\), it suffices to show that \(\phi^*\) is a closed map.
+By \partref{1}{21}{iii}, it suffices to show that \(V(\mathfrak{b}^c) \subseteq \phi^*(V(\mathfrak{b}))\) whenever \(\mathfrak{b}\) is an ideal of \(B\).
+Thus, suppose \(\mathfrak{p} \in V(\mathfrak{b}^c)\), so that \(\phi^{-1}(\mathfrak{b}) \subseteq \mathfrak{p}\), and \(\mathfrak{p} \in V(\Ker(\phi))\) since \(\Ker(\phi) \subseteq \mathfrak{b}^c\).
+Since \(\phi\) is surjective, \(\mathfrak{b} = \phi(\phi^{-1}(\mathfrak{b})) \subseteq \phi(\mathfrak{p})\), so \(\phi(\mathfrak{p}) \in V(\mathfrak{b})\), and hence \(\mathfrak{p} = \phi^*(\phi(\mathfrak{p})) \in \phi^*(V(\mathfrak{b}))\).
+Therefore, \(V(\mathfrak{b}^c) \subseteq \phi^*(V(\mathfrak{b}))\), and so \(\phi^*\) is a homeomorphism of \(Y\) onto \(V(\Ker(\phi))\).
 \end{partsolution}
 
 \begin{partsolution}{v}
