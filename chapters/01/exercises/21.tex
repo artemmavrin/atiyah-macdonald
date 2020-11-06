@@ -113,5 +113,15 @@ If \(\mathfrak{q} \in \Spec(C)\), then \((\psi \circ \phi)^{-1}(\mathfrak{q}) = 
 \end{partsolution}
 
 \begin{partsolution}{vii}
+Let \(A\) be an integral domain with just one non-zero prime ideal \(\mathfrak{p}\), and let \(X = \Spec(A)\).
+Then \(X = \{(0), \mathfrak{p}\}\), where \((0)\) is a generic point since \(A\) is an integral domain, and \(\mathfrak{p}\) is a closed point by \expartref{1}{18}{i}.
+Thus, the Zariski topology of \(X\) is \(\{\emptyset, \{(0)\}, X\}\).
 
+Moreover, let \(K\) be the field of fractions of \(A\), let \(B = (A / \mathfrak{p}) \times K\), and let \(Y = \Spec(B)\).
+Then \(Y = \{(A / \mathfrak{p}) \times (0), (0) \times K\}\); neither point of \(Y\) is generic, so automatically \(Y\) is not homeomorphic to \(X\).
+In fact, both points of \(Y\) are maximal ideals of \(B\), so both are closed points by \expartref{1}{18}{i}, so the Zariski topology of \(Y\) is discrete.
+
+Let \(\phi : A \to B\) be the ring homomorphism given by \(\phi(x) = (\bar{x}, x)\).
+Then \(\phi^{-1}((A / \mathfrak{p}) \times (0)) = (0)\) and \(\phi^{-1}((0) \times K) = \mathfrak{p}\), so \(\phi^* : Y \to X\) is a continuous bijection.
+However, we've already observed that \(\phi^*\) can't be a homeomorphism (e.g., \(\phi^*(\{(A / \mathfrak{p}) \times K)\}) = \{(0)\}\), so \(\phi^*\) is not an open map).
 \end{partsolution}
