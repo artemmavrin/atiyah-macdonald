@@ -32,4 +32,15 @@ Thus, \(e\) is idempotent.
 Moreover, \(e \neq 0\) (since otherwise \(1 = 1 - e = f \in (b^n) \subseteq \mathfrak{b}\)), and \(e \neq 1\) (since otherwise \(1 = e \in (a^n) \subseteq \mathfrak{a}\)).
 We conclude that \partref{1}{22}{i} implies \partref{1}{22}{iii}.
 
+Next, we claim that \partref{1}{22}{iii} implies \partref{1}{22}{ii}.
+Suppose \(e \in A\) is an idempotent such that \(e \neq 0, 1\).
+Let \(f = 1 - e\).
+Since \(e + f = 1\), the ideals \((e)\) and \((f)\) are coprime.
+In particular, it follows that \((e) \cap (f) = (e f)\).
+But \(e f = e (1 - e) = e - e^2 = 0\) since \(e\) is idempotent, so \((e) \cap (f) = (0)\).
+Now Proposition~1.10 implies that \(A \cong A / (e) \times A / (f)\).
+Moreover, \(A / (e)\) and \(A / (f)\) are nonzero since \(e \neq 0, 1\).
+Thus, \partref{1}{22}{iii} implies \partref{1}{22}{ii}.
+
+
 \end{solution}
