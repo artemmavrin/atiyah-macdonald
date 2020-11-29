@@ -17,5 +17,19 @@ In particular, the spectrum of a local ring is always connected (\exref{1}{12}).
 \end{exercise}
 
 \begin{solution}
+First, we claim that \partref{1}{22}{i} implies \partref{1}{22}{iii}.
+Suppose \(X = \Spec(A)\) is disconnected, and write \(X = Y \cup Z\) for some disjoint, nonempty, and closed \(Y, Z \subseteq X\).
+Choose ideals \(\mathfrak{a}, \mathfrak{b}\) of \(A\) such that \(Y = V(\mathfrak{a})\) and \(Z = V(\mathfrak{b})\).
+Since \(Y\) and \(Z\) are nonempty, both \(\mathfrak{a}\) and \(\mathfrak{b}\) are proper ideals of \(A\).
+Moreover, since \(Y \cap Z = \emptyset\), there is no prime ideal of \(A\) which contains both \(\mathfrak{a}\) and \(\mathfrak{b}\), so \(\mathfrak{a}\) and \(\mathfrak{b}\) are coprime.
+Therefore there exist \(a \in \mathfrak{a}\) and \(b \in \mathfrak{b}\) such that \(a + b = 1\).
+Since \(a b \in \mathfrak{a} \mathfrak{b}\) and \(V(\mathfrak{a} \mathfrak{b}) = Y \cup Z = X\) by \expartref{1}{15}{iv}, Proposition~1.8 implies that \(a b\) is nilpotent, so \(a^n b^n = 0\) for some positive integer \(n\).
+Since \(a \in r((a^n))\), \(b \in r((b^n))\), and \(a + b = 1\) it follows that \(r((a^n))\) and \(r((b^n))\) are coprime.
+Proposition~1.16 then implies that \((a^n)\) and \((b^n)\) are coprime.
+Choose \(e \in (a^n)\) and \(f \in (b^n)\) such that \(e + f = 1\).
+Then \(e - e^2 = e (1 - e) = e f \in (a^n b^n) = (0)\), so \(e - e^2 = 0\).
+Thus, \(e\) is idempotent.
+Moreover, \(e \neq 0\) (since otherwise \(1 = 1 - e = f \in (b^n) \subseteq \mathfrak{b}\)), and \(e \neq 1\) (since otherwise \(1 = e \in (a^n) \subseteq \mathfrak{a}\)).
+We conclude that \partref{1}{22}{i} implies \partref{1}{22}{iii}.
 
 \end{solution}
