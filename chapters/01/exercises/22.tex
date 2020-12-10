@@ -47,9 +47,22 @@ Finally, the following \autoref{claim:1.22} will imply both that \partref{1}{22}
 
 \begin{claim}
 \label{claim:1.22}
-
+Suppose \(A = A_1 \times A_2\) for some rings \(A_1, A_2\).
+Let \(X = \Spec(A)\), \(X_1 = \Spec(A_1)\) and \(X_2 = \Spec(A_2)\).
+Let \(\phi_1 : A \to A_1\) and \(\phi_2 : A \to A_2\) be the projection homomorphisms, and let \(\phi_1^* : X_1 \to X\) and \(\phi_2^* : X_2 \to X\) be the associated continuous maps (cf.~\exref{1}{21}).
+Then the diagram
+\begin{equation*}
+\begin{tikzcd}
+X_1 \arrow[r, "\phi_1^*"] & X & \arrow[l, "\phi_2^*"'] X_2
+\end{tikzcd}
+\end{equation*}
+is a disjoint union.
 \end{claim}
 
 \begin{proof}
-
+Since \(\phi_1\) and \(\phi_2\) are surjective, \expartref{1}{21}{iv} implies that \(\phi_1^*\) and \(\phi_2^*\) are homeomorphisms onto their images, which are closed.
+Without loss of generality, identify their images with \(X_1\) and \(X_2\).
+Explicitly, \(X_1\) consists of ideals of the form \(\mathfrak{p} \times A_2\), where \(\mathfrak{p}\) is a prime ideal of \(A_1\), and \(X_2\) consists of ideals of the form \(A_1 \times \mathfrak{q}\), where \(\mathfrak{q}\) is a prime ideal of \(A_2\).
+In particular, \(X_1 \cap X_2 = \emptyset\).
+Moreover, any prime ideal of \(A\) belongs to either \(X_1\) or \(X_2\), so \(X = X_1 \cup X_2\), and we are done.
 \end{proof}
