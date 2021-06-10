@@ -268,3 +268,6 @@
     {} % label
     {0pt} % sep
     {} % before-code
+
+% For timestamp
+\RequirePackage[style=iso]{datetime2}
