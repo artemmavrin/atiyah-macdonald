@@ -1,31 +1,17 @@
 name: Build PDF
-
-on: [push, pull_request]
-
+on: [pull_request, workflow_dispatch]
 jobs:
-  build_latex:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@master
+      - name: Check out Git repository
+        uses: actions/checkout@v6
+      - name: Compile LaTeX document to PDF
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: solutions.tex
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v6
         with:
           name: solutions.pdf
           path: solutions.pdf
-      - name: Prepare for deployment
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: |
-          mkdir -p html
-          cp solutions.pdf html
-          echo "<html><body><meta http-equiv=\"refresh\" content=\"0; url=./solutions.pdf\" /></body></html>" > html/index.html
-      - name: Deploy PDF
-        if: ${{ github.ref == 'refs/heads/main' }}
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages
-          folder: html
