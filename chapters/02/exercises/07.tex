@@ -1,0 +1,17 @@
+\begin{exercise}
+    Let $\mathfrak p$ be a prime ideal in $A$.
+    Show that $\mathfrak p[x]$ is a prime ideal in $A[x]$.
+    If $\mathfrak m$ is a maximal ideal in $A$, is $\mathfrak m[x]$ a maximal ideal in $A[x]$?
+\end{exercise}
+
+\begin{solution}
+    Let $\mathfrak p$ be a prime ideal in $A$, and consider the canonical surjective ring homomorphism $A[x] \to (A/\mathfrak p)[x]$.
+    Its kernel is clearly $\mathfrak p[x]$, whence
+    \begin{equation*}
+        A[x] / \mathfrak p[x] \cong (A / \mathfrak p)[x].
+    \end{equation*}
+    Since $(A/\mathfrak p)[x]$ is an integral domain, it follows that $\mathfrak p[x]$ is prime.
+
+    Moreover, if $\mathfrak m$ is a maximal ideal of $A$, then $\mathfrak m[x]$ is \emph{never} maximal: we have $A[x] / \mathfrak m[x] \cong (A/\mathfrak m)[x]$ by the argument above, so $\mathfrak m[x]$ is maximal if and only if $(A/\mathfrak m)[x]$ is a field.
+    Since a polynomial ring is never a field, it follows that $\mathfrak m[x]$ is not maximal.
+\end{solution}
